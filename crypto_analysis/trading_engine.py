@@ -34,11 +34,33 @@ class TradingEngine:
         self.generate_signals()
         self.backtest()
 
-    def get_results(self):
-        self.plotter.plot_data()
-        self.plotter.plot_results(self.portfolio_values, self.initial_capital)
+    def get_signals(self):
+        return self.signals
+    
+    def get_backtest_results(self):
         return self.backtest_results
-
+    
+    def plot_strategy(self):
+        self.plotter.plot_data()
+        return 
+    
+    def plot_portafolio(self):
+        self.plotter.plot_portfolio(self.portfolio_values, self.initial_capital)
+        return 
+    
+    def plot_strategy(self):
+        self.plotter.plot_data()
+        return 
+    
+    def plot_portafolio(self):
+        self.plotter.plot_portfolio(self.portfolio_values, self.initial_capital)
+        return 
+    
+    def get_data_plot(self):
+        return self.plotter.get_data_plot()
+         
+    def get_portfolio_plot(self):
+        return self.plotter.get_portfolio_plot(self.portfolio_values, self.initial_capital)
 
 if __name__ == '__main__':
     # Example usage

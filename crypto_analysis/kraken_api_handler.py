@@ -81,6 +81,14 @@ class KrakenAPIHandler:
         
         except Exception as e:
             raise Exception(f"An error occurred: {e}")
+        
+    def get_available_pairs(self) -> list:
+        """
+        Fetches all available currency pairs on Kraken.
+        Returns:
+            list: List of currency pairs.
+        """
+        return self.fetch_asset_pairs()
 
 
 if __name__ == '__main__':
