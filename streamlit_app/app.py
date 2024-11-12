@@ -8,7 +8,7 @@ def main():
     
     # User inputs
     kraken_api_handler = KrakenAPIHandler()
-    available_pairs = kraken_api_handler.get_available_pairs()
+    available_pairs = kraken_api_handler.get_asset_pairs()
     pair = st.selectbox(
         "Select the cryptocurrency pair", 
         options=available_pairs,
