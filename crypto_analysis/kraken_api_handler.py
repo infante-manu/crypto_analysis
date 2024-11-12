@@ -70,6 +70,9 @@ class KrakenAPIHandler:
         except (KeyError, ValueError, TypeError) as e:
             raise ValueError(f"Error parsing API response data: {e}")
         
+    def get_asset_pairs(self):
+        """Returns asset pairs available on Kraken."""
+        return self.fetch_asset_pairs()
 
 # Usage example:
 if __name__ == '__main__':
