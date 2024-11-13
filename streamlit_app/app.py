@@ -1,5 +1,5 @@
 import streamlit as st
-from crypto_analysis.trading_engine import TradingEngine
+from crypto_analysis.trading_engine import TradingEngine, Config
 from crypto_analysis.kraken_api_handler import KrakenAPIHandler
 import pandas as pd
 
@@ -26,16 +26,17 @@ def main():
 
     if st.button("Run Simulation"):
         # Create an instance of TradingEngine with user inputs
-        engine = TradingEngine(
-            pair=pair, 
-            initial_capital=initial_capital,
-            # start_date = start_date,
-            # end_date = end_date,
-            # interval = interval,
-            # oversold = oversold,
-            # overbought = overbought
-            )
         
+        config = Config(
+            pair=pair,
+            initial_capital=initial_capital,
+            interval=interval,
+            oversold=oversold,
+            overbought=overbought
+        )
+
+        engine = TradingEngine(config)
+
         # Run the simulation
         engine.run()
 
