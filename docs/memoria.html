@@ -7510,7 +7510,7 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e2f9a4ff">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=881c3b87">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7573,7 +7573,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.-Descripci%C3%B3n-del-Proyecto">1. Descripción del Proyecto<a class="anchor-link" href="#1.-Descripci%C3%B3n-del-Proyecto">¶</a></h2><p>Este proyecto tiene como objetivo analizar datos de criptomonedas, generar señales de trading y visualizar tendencias de precios utilizando Bandas de Bollinger.</p>
+<h2 id="1.-Descripci%C3%B3n-del-Proyecto">1. Descripción del Proyecto<a class="anchor-link" href="#1.-Descripci%C3%B3n-del-Proyecto">¶</a></h2><p>Este proyecto tiene como objetivo analizar datos de criptomonedas, generar señales de trading y visualizar tendencias de precios. Para ello, se emplea una combinación de Bandas de Bollinger y el Índice de Fuerza Relativa (RSI), un indicador popular en el análisis técnico que mide el impulso y la velocidad de los movimientos de precios. Finalmente, se simula una estrategia de trading (backtesting) utilizando las señales generadas, considerando un capital inicial y un período determinado.</p>
 </div>
 </div>
 </div>
@@ -7614,42 +7614,39 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 <h2 id="2-estructura-del-código-y-archivos">Estructura del Codigo y Archivos</h2>
 La estructura del proyecto es la siguiente:
 
-<div class="highlight"><pre><span></span>crypto_analysis/
-<span class="w">    </span>__init__.py
-<span class="w">    </span>backtester.py
-<span class="w">    </span>crypto_data_processor.py
-<span class="w">    </span>crypto_plotter.py
-<span class="w">    </span>kraken_api_handler.py
-<span class="w">    </span>signal_generator.py
-<span class="w">    </span>trading_engine.py
-<span class="w">    </span>utils.py
-data/
-docs/
-notebooks/
-<span class="w">    </span>analysis_notebook.ipynb
-<span class="w">    </span>Python_proyecto_final<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span>.ipynb
-streamlit_app/
-<span class="w">    </span>app.py
-tests/
-<span class="w">    </span>test_crypto_data_processor.py
-<span class="w">    </span>test_crypto_plotter.py
-<span class="w">    </span>test_kraken_api_handler.py
-<span class="w">    </span>test_signal_generator.py
-main.py
-requirements.txt
-run.sh
-setup.py
+<div class="highlight"><pre><span></span>├──<span class="w"> </span>CHANGELOG.md<span class="w">                  </span><span class="c1"># Archivo de registro de cambios del proyecto</span>
+├──<span class="w"> </span>README.md<span class="w">                     </span><span class="c1"># Archivo de descripción general del proyecto</span>
+├──<span class="w"> </span>build.py<span class="w">                      </span><span class="c1"># Script para construir el proyecto</span>
+├──<span class="w"> </span>crypto_analysis<span class="w">               </span><span class="c1"># Directorio principal del análisis de criptomonedas</span>
+│<span class="w">   </span>├──<span class="w"> </span>__init__.py<span class="w">               </span><span class="c1"># Archivo de inicialización del paquete</span>
+│<span class="w">   </span>├──<span class="w"> </span>backtester.py<span class="w">             </span><span class="c1"># Módulo para ejecutar backtests en las señales de trading</span>
+│<span class="w">   </span>├──<span class="w"> </span>crypto_data_processor.py<span class="w">  </span><span class="c1"># Módulo para procesar y analizar datos de criptomonedas</span>
+│<span class="w">   </span>├──<span class="w"> </span>crypto_plotter.py<span class="w">         </span><span class="c1"># Módulo para la visualización de datos y señales de trading</span>
+│<span class="w">   </span>├──<span class="w"> </span>kraken_api_handler.py<span class="w">     </span><span class="c1"># Módulo para manejar la interacción con la API de Kraken</span>
+│<span class="w">   </span>├──<span class="w"> </span>signal_generator.py<span class="w">       </span><span class="c1"># Módulo para generar señales de compra y venta</span>
+│<span class="w">   </span>├──<span class="w"> </span>trading_engine.py<span class="w">         </span><span class="c1"># Módulo que integra todos los componentes para ejecutar la estrategia de trading</span>
+│<span class="w">   </span>└──<span class="w"> </span>utils.py<span class="w">                  </span><span class="c1"># Módulo con funciones utilitarias</span>
+├──<span class="w"> </span>data<span class="w">                          </span><span class="c1"># Directorio para almacenar datos de criptomonedas</span>
+├──<span class="w"> </span>docs<span class="w">                          </span><span class="c1"># Directorio para la documentación del proyecto</span>
+│<span class="w">   </span>├──<span class="w"> </span>build_memoria.py<span class="w">          </span><span class="c1"># Script para construir la memoria del proyecto</span>
+│<span class="w">   </span>├──<span class="w"> </span>memoria<span class="w">                   </span><span class="c1"># Directorio con los notebooks de la memoria del proyecto</span>
+│<span class="w">   </span>├──<span class="w"> </span>memoria.html<span class="w">              </span><span class="c1"># Archivo HTML generado de la memoria del proyecto</span>
+│<span class="w">   </span>├──<span class="w"> </span>memoria.ipynb<span class="w">             </span><span class="c1"># Notebook principal de la memoria del proyecto</span>
+│<span class="w">   </span>└──<span class="w"> </span>other<span class="w">                     </span><span class="c1"># Directorio con otros notebooks</span>
+├──<span class="w"> </span>main.py<span class="w">                       </span><span class="c1"># Archivo principal para ejecutar el proyecto</span>
+├──<span class="w"> </span>notebooks<span class="w">                     </span><span class="c1"># Directorio para los notebooks de Jupyter</span>
+│<span class="w">   </span>└──<span class="w"> </span>analysis_notebook.ipynb<span class="w">   </span><span class="c1"># Notebook para el análisis de datos</span>
+├──<span class="w"> </span>requirements.txt<span class="w">              </span><span class="c1"># Archivo con las dependencias del proyecto</span>
+├──<span class="w"> </span>run.sh<span class="w">                        </span><span class="c1"># Script para ejecutar la aplicación Streamlit</span>
+├──<span class="w"> </span>setup.py<span class="w">                      </span><span class="c1"># Archivo de configuración para la distribución del proyecto</span>
+├──<span class="w"> </span>streamlit_app<span class="w">                 </span><span class="c1"># Directorio para la aplicación Streamlit</span>
+│<span class="w">   </span>└──<span class="w"> </span>app.py<span class="w">                    </span><span class="c1"># Archivo principal de la aplicación Streamlit</span>
+└──<span class="w"> </span>tests<span class="w">                         </span><span class="c1"># Directorio para las pruebas unitarias</span>
+<span class="w">    </span>├──<span class="w"> </span>test_crypto_data_processor.py<span class="w"> </span><span class="c1"># Pruebas unitarias para el módulo crypto_data_processor</span>
+<span class="w">    </span>├──<span class="w"> </span>test_crypto_plotter.py<span class="w">        </span><span class="c1"># Pruebas unitarias para el módulo crypto_plotter</span>
+<span class="w">    </span>├──<span class="w"> </span>test_kraken_api_handler.py<span class="w">    </span><span class="c1"># Pruebas unitarias para el módulo kraken_api_handler</span>
+<span class="w">    </span>└──<span class="w"> </span>test_signal_generator.py<span class="w">      </span><span class="c1"># Pruebas unitarias para el módulo signal_generator</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=84d2317f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 </div>
 </div>
 </div>
@@ -7679,7 +7676,18 @@ setup.py
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-Descripci%C3%B3n-de-los-M%C3%B3dulos">3. Descripción de los Módulos<a class="anchor-link" href="#3.-Descripci%C3%B3n-de-los-M%C3%B3dulos">¶</a></h2>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+</style>
+<h2 id="3.-Descripci%C3%B3n-de-los-M%C3%B3dulos">3. Descripción de los Módulos<a class="anchor-link" href="#3.-Descripci%C3%B3n-de-los-M%C3%B3dulos">¶</a></h2><p>El siguiente Diagrama de Secuencia muestra el flujo de interacción entre las clases del proyecto y cómo TradingEngine actúa como el coordinador principal de la estrategia de trading:</p>
+<div style="text-align: center;">
+<img alt="Diagrama de Secuencia" src="/Users/manuel.infante/Library/CloudStorage/GoogleDrive-minfante.1@alumni.unav.es/My Drive/Repositorios/python-for-data-analysis/crypto_analysis/docs/images/sequence-diagram.jpg" style="width: 75%;"/>
+</div>
 </div>
 </div>
 </div>
@@ -7709,19 +7717,86 @@ setup.py
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.1.-KrakenAPIHandler">3.1. KrakenAPIHandler<a class="anchor-link" href="#3.1.-KrakenAPIHandler">¶</a></h3><p>Este módulo maneja la interacción con la API de Kraken para obtener datos de criptomonedas.</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">KrakenAPIHandler</span><span class="p">:</span>
-    <span class="n">OHLC_URL</span> <span class="o">=</span> <span class="s2">"https://api.kraken.com/0/public/OHLC"</span>
-    <span class="n">ASSET_PAIRS_URL</span> <span class="o">=</span> <span class="s1">'https://api.kraken.com/0/public/AssetPairs'</span>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
-    <span class="k">def</span> <span class="nf">fetch_ohlc_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pair</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interval</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">since</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-        <span class="c1"># Código para obtener datos OHLC</span>
-        <span class="o">...</span>
+    body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+    }
+</style>
+<div id="3.1-krakenapihandler"></div>
+<h3 id="3.1.-KrakenAPIHandler">3.1. KrakenAPIHandler<a class="anchor-link" href="#3.1.-KrakenAPIHandler">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>La clase <code>KrakenAPIHandler</code> es responsable de manejar la interacción con la API de Kraken para obtener datos de criptomonedas. Esta clase proporciona métodos para obtener datos OHLC (Open, High, Low, Close) y pares de activos disponibles en la plataforma Kraken.</p>
+<h4 id="Funcionalidad">Funcionalidad<a class="anchor-link" href="#Funcionalidad">¶</a></h4><ol>
+<li><p><strong>Atributos</strong></p>
+<ul>
+<li><code>OHLC_URL</code>: URL de la API de Kraken para obtener datos OHLC.</li>
+<li><code>ASSET_PAIRS_URL</code>: URL de la API de Kraken para obtener pares de activos.</li>
+</ul>
+</li>
+<li><p><strong>Métodos</strong></p>
+<ul>
+<li><p><code>fetch_ohlc_data(pair: str, interval: int, since: int = None) -&gt; pd.DataFrame</code></p>
+<ul>
+<li><strong>Descripción</strong>: Este método obtiene datos OHLC para un par de activos específico y un intervalo de tiempo determinado.</li>
+<li><strong>Parámetros</strong>:<ul>
+<li><code>pair</code> (str): El par de activos para el cual se desean obtener los datos (por ejemplo, 'BTCUSD').</li>
+<li><code>interval</code> (int): El intervalo de tiempo en minutos para los datos OHLC (por ejemplo, 1, 5, 15, 30, 60, 240, 1440).</li>
+<li><code>since</code> (int, opcional): El timestamp desde el cual se desean obtener los datos. Si no se proporciona, se obtendrán los datos más recientes.</li>
+</ul>
+</li>
+<li><strong>Retorno</strong>: Un DataFrame de pandas que contiene los datos OHLC.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Construye la URL de la solicitud utilizando los parámetros proporcionados.</li>
+<li>Realiza una solicitud HTTP GET a la API de Kraken.</li>
+<li>Procesa la respuesta JSON y convierte los datos en un DataFrame de pandas.</li>
+<li>Devuelve el DataFrame con los datos OHLC.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>fetch_asset_pairs() -&gt; list</code></p>
+<ul>
+<li><strong>Descripción</strong>: Este método obtiene la lista de pares de activos disponibles en la plataforma Kraken.</li>
+<li><strong>Parámetros</strong>: Ninguno.</li>
+<li><strong>Retorno</strong>: Una lista de pares de activos disponibles.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Realiza una solicitud HTTP GET a la API de Kraken utilizando la URL <code>ASSET_PAIRS_URL</code>.</li>
+<li>Procesa la respuesta JSON y extrae la lista de pares de activos.</li>
+<li>Devuelve la lista de pares de activos.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>get_asset_pairs() -&gt; list</code></p>
+<ul>
+<li><strong>Descripción</strong>: Este método devuelve la lista de pares de activos almacenada en la instancia de la clase.</li>
+<li><strong>Parámetros</strong>: Ninguno.</li>
+<li><strong>Retorno</strong>: Una lista de pares de activos disponibles.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Devuelve la lista de pares de activos que se ha almacenado previamente en la instancia de la clase.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Ejemplo-de-Uso">Ejemplo de Uso<a class="anchor-link" href="#Ejemplo-de-Uso">¶</a></h4><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">crypto_analysis.kraken_api_handler</span> <span class="kn">import</span> <span class="n">KrakenAPIHandler</span>
 
-    <span class="k">def</span> <span class="nf">fetch_asset_pairs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-        <span class="c1"># Código para obtener pares de activos</span>
-        <span class="o">...</span>
+<span class="c1"># Crear una instancia de KrakenAPIHandler</span>
+<span class="n">api_handler</span> <span class="o">=</span> <span class="n">KrakenAPIHandler</span><span class="p">()</span>
+
+<span class="c1"># Obtener datos OHLC para el par BTCUSD con un intervalo de 1 minuto</span>
+<span class="n">ohlc_data</span> <span class="o">=</span> <span class="n">api_handler</span><span class="o">.</span><span class="n">fetch_ohlc_data</span><span class="p">(</span><span class="n">pair</span><span class="o">=</span><span class="s1">'BTCUSD'</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Obtener la lista de pares de activos disponibles</span>
+<span class="n">asset_pairs</span> <span class="o">=</span> <span class="n">api_handler</span><span class="o">.</span><span class="n">fetch_asset_pairs</span><span class="p">()</span>
+
+<span class="c1"># Obtener la lista de pares de activos almacenada en la instancia</span>
+<span class="n">stored_asset_pairs</span> <span class="o">=</span> <span class="n">api_handler</span><span class="o">.</span><span class="n">get_asset_pairs</span><span class="p">()</span>
 </pre></div>
+<p><a href="https://github.com/infante-manu/crypto_analysis/blob/main/crypto_analysis/kraken_api_handler.py">Ver código fuente en GitHub</a></p>
 </div>
 </div>
 </div>
@@ -7741,38 +7816,82 @@ setup.py
     }
 </style>
 <div id="3.2-cryptodataprocessor"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fa86a5f7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.2.-CryptoDataProcessor">3.2. CryptoDataProcessor<a class="anchor-link" href="#3.2.-CryptoDataProcessor">¶</a></h3><p>Este módulo procesa y analiza los datos de criptomonedas.</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CryptoDataProcessor</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pair</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1440</span><span class="p">,</span> <span class="n">oversold</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">overbought</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">70</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">kraken_api_handler</span> <span class="o">=</span> <span class="n">KrakenAPIHandler</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pair</span> <span class="o">=</span> <span class="n">pair</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">interval</span> <span class="o">=</span> <span class="n">interval</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">oversold</span> <span class="o">=</span> <span class="n">oversold</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">overbought</span> <span class="o">=</span> <span class="n">overbought</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fetch_data</span><span class="p">()</span>
+<h3 id="3.2.-CryptoDataProcessor">3.2. CryptoDataProcessor<a class="anchor-link" href="#3.2.-CryptoDataProcessor">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>La clase <code>CryptoDataProcessor</code> es responsable de procesar y analizar los datos de criptomonedas. Esta clase proporciona métodos para obtener datos OHLC (Open, High, Low, Close) de la API de Kraken, calcular indicadores técnicos como las Bandas de Bollinger y el Índice de Fuerza Relativa (RSI), y devolver los datos procesados.</p>
+<h4 id="Funcionalidad">Funcionalidad<a class="anchor-link" href="#Funcionalidad">¶</a></h4><ol>
+<li><p><strong>Atributos</strong></p>
+<ul>
+<li><code>pair</code>: El par de activos para el cual se desean obtener los datos (por ejemplo, 'BTCUSD').</li>
+<li><code>interval</code>: El intervalo de tiempo en minutos para los datos OHLC (por ejemplo, 1, 5, 15, 30, 60, 240, 1440).</li>
+<li><code>oversold</code>: El umbral del RSI para considerar que un activo está sobrevendido.</li>
+<li><code>overbought</code>: El umbral del RSI para considerar que un activo está sobrecomprado.</li>
+<li><code>data</code>: Un DataFrame de pandas que contiene los datos OHLC obtenidos de la API de Kraken.</li>
+</ul>
+</li>
+<li><p><strong>Métodos</strong></p>
+<ul>
+<li><p><code>fetch_data()</code></p>
+<ul>
+<li><strong>Descripción</strong>: Este método obtiene datos OHLC para un par de activos específico y un intervalo de tiempo determinado.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Realiza una solicitud HTTP GET a la API de Kraken utilizando la URL <code>OHLC_URL</code>.</li>
+<li>Procesa la respuesta JSON y convierte los datos en un DataFrame de pandas.</li>
+<li>Almacena el DataFrame en el atributo <code>data</code>.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>calculate_bollinger_bands(df: pd.DataFrame, column: str = 'close', window: int = 20, num_std_dev: int = 2) -&gt; pd.DataFrame</code></p>
+<ul>
+<li><strong>Descripción</strong>: Este método calcula las Bandas de Bollinger para los datos proporcionados.</li>
+<li><strong>Parámetros</strong>:<ul>
+<li><code>df</code> (pd.DataFrame): El DataFrame que contiene los datos OHLC.</li>
+<li><code>column</code> (str): La columna sobre la cual se calcularán las Bandas de Bollinger (por defecto, 'close').</li>
+<li><code>window</code> (int): El número de periodos para calcular la media móvil.</li>
+<li><code>num_std_dev</code> (int): El número de desviaciones estándar para calcular las bandas superior e inferior.</li>
+</ul>
+</li>
+<li><strong>Retorno</strong>: Un DataFrame de pandas que contiene las Bandas de Bollinger calculadas.</li>
+</ul>
+</li>
+<li><p><code>calculate_rsi(df: pd.DataFrame, column: str = 'close', period: int = 14) -&gt; pd.DataFrame</code></p>
+<ul>
+<li><strong>Descripción</strong>: Este método calcula el Índice de Fuerza Relativa (RSI) para los datos proporcionados.</li>
+<li><strong>Parámetros</strong>:<ul>
+<li><code>df</code> (pd.DataFrame): El DataFrame que contiene los datos OHLC.</li>
+<li><code>column</code> (str): La columna sobre la cual se calculará el RSI (por defecto, 'close').</li>
+<li><code>period</code> (int): El número de periodos para calcular el RSI.</li>
+</ul>
+</li>
+<li><strong>Retorno</strong>: Un DataFrame de pandas que contiene el RSI calculado.</li>
+</ul>
+</li>
+<li><p><code>get_processed_data() -&gt; pd.DataFrame</code></p>
+<ul>
+<li><strong>Descripción</strong>: Este método procesa los datos obtenidos, calculando las Bandas de Bollinger y el RSI, y devuelve los datos procesados.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Obtiene los datos OHLC utilizando el método <code>fetch_data()</code>.</li>
+<li>Calcula las Bandas de Bollinger utilizando el método <code>calculate_bollinger_bands()</code>.</li>
+<li>Calcula el RSI utilizando el método <code>calculate_rsi()</code>.</li>
+<li>Devuelve un DataFrame que contiene los datos procesados, incluyendo las Bandas de Bollinger y el RSI.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Ejemplo-de-Uso">Ejemplo de Uso<a class="anchor-link" href="#Ejemplo-de-Uso">¶</a></h4><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">crypto_analysis.crypto_data_processor</span> <span class="kn">import</span> <span class="n">CryptoDataProcessor</span>
 
-    <span class="k">def</span> <span class="nf">fetch_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kraken_api_handler</span><span class="o">.</span><span class="n">fetch_ohlc_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pair</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">interval</span><span class="p">)</span>
+<span class="c1"># Crear una instancia de CryptoDataProcessor</span>
+<span class="n">processor</span> <span class="o">=</span> <span class="n">CryptoDataProcessor</span><span class="p">(</span><span class="n">pair</span><span class="o">=</span><span class="s1">'BTCUSD'</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">calculate_bollinger_bands</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'close'</span><span class="p">,</span> <span class="n">window</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">num_std_dev</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-        <span class="c1"># Código para calcular Bandas de Bollinger</span>
-        <span class="o">...</span>
+<span class="c1"># Obtener los datos procesados</span>
+<span class="n">processed_data</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">get_processed_data</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">calculate_rsi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'close'</span><span class="p">,</span> <span class="n">period</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-        <span class="c1"># Código para calcular RSI</span>
-        <span class="o">...</span>
+<span class="c1"># Mostrar los datos procesados</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">processed_data</span><span class="p">)</span>
 </pre></div>
+<p><a href="https://github.com/infante-manu/crypto_analysis/blob/main/crypto_analysis/crypto_data_processor.py">Ver código fuente en GitHub</a></p>
 </div>
 </div>
 </div>
@@ -7792,25 +7911,69 @@ setup.py
     }
 </style>
 <div id="3.3-signalgenerator"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=14b0db63">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.3.-SignalGenerator">3.3. SignalGenerator<a class="anchor-link" href="#3.3.-SignalGenerator">¶</a></h3><p>Este módulo genera señales de compra y venta basadas en Bandas de Bollinger y RSI.</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SignalGenerator</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+<h3 id="3.3.-SignalGenerator">3.3. SignalGenerator<a class="anchor-link" href="#3.3.-SignalGenerator">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>La clase <code>SignalGenerator</code> es responsable de generar señales de trading basadas en los datos procesados de criptomonedas. Utiliza indicadores técnicos como las Bandas de Bollinger y el Índice de Fuerza Relativa (RSI) para identificar oportunidades de compra y venta.</p>
+<h4 id="Funcionalidad">Funcionalidad<a class="anchor-link" href="#Funcionalidad">¶</a></h4><ol>
+<li><p><strong>Atributos</strong></p>
+<ul>
+<li><code>data</code>: Un DataFrame de pandas que contiene los datos procesados de criptomonedas, incluyendo indicadores técnicos como las Bandas de Bollinger y el RSI.</li>
+</ul>
+</li>
+<li><p><strong>Métodos</strong></p>
+<ul>
+<li><p><code>__init__(self, data: pd.DataFrame) -&gt; None</code></p>
+<ul>
+<li><strong>Descripción</strong>: Inicializa la clase <code>SignalGenerator</code> con los datos procesados de criptomonedas.</li>
+<li><strong>Parámetros</strong>:<ul>
+<li><code>data</code> (pd.DataFrame): El DataFrame que contiene los datos procesados de criptomonedas.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>_validate_data(self, data: pd.DataFrame) -&gt; None</code></p>
+<ul>
+<li><strong>Descripción</strong>: Valida que los datos contengan las columnas requeridas.</li>
+<li><strong>Parámetros</strong>:<ul>
+<li><code>data</code> (pd.DataFrame): El DataFrame que contiene los datos procesados de criptomonedas.</li>
+</ul>
+</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Verifica que las columnas necesarias ('close', 'upper_band', 'lower_band', 'rsi', 'over_sold', 'over_bought') estén presentes en el DataFrame.</li>
+<li>Lanza una excepción si faltan columnas requeridas.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>generate_signals(self) -&gt; pd.DataFrame</code></p>
+<ul>
+<li><strong>Descripción</strong>: Genera señales de compra y venta basadas en las Bandas de Bollinger y el RSI.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Itera sobre los datos y genera señales de compra cuando el precio cierra por debajo de la banda inferior y el RSI está por debajo del umbral de sobreventa.</li>
+<li>Genera señales de venta cuando el precio cierra por encima de la banda superior y el RSI está por encima del umbral de sobrecompra.</li>
+<li>Almacena las señales generadas en nuevas columnas del DataFrame ('buy' y 'sell').</li>
+<li>Devuelve el DataFrame con las señales generadas.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Ejemplo-de-Uso">Ejemplo de Uso<a class="anchor-link" href="#Ejemplo-de-Uso">¶</a></h4><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">crypto_analysis.signal_generator</span> <span class="kn">import</span> <span class="n">SignalGenerator</span>
 
-    <span class="k">def</span> <span class="nf">generate_signals</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-        <span class="c1"># Código para generar señales</span>
-        <span class="o">...</span>
+<span class="c1"># Supongamos que 'data' es un DataFrame con los datos procesados de criptomonedas</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'processed_crypto_data.csv'</span><span class="p">)</span>
+
+<span class="c1"># Crear una instancia de SignalGenerator</span>
+<span class="n">signal_generator</span> <span class="o">=</span> <span class="n">SignalGenerator</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Generar señales de compra y venta</span>
+<span class="n">signals</span> <span class="o">=</span> <span class="n">signal_generator</span><span class="o">.</span><span class="n">generate_signals</span><span class="p">()</span>
+
+<span class="c1"># Mostrar las señales generadas</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">signals</span><span class="p">[[</span><span class="s1">'close'</span><span class="p">,</span> <span class="s1">'buy'</span><span class="p">,</span> <span class="s1">'sell'</span><span class="p">]])</span>
 </pre></div>
+<p><a href="https://github.com/infante-manu/crypto_analysis/blob/main/crypto_analysis/signal_generator.py">Ver código fuente en GitHub</a></p>
 </div>
 </div>
 </div>
@@ -7830,34 +7993,82 @@ setup.py
     }
 </style>
 <div id="3.4-backtester"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c4dc3d8a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.4.-Backtester">3.4. Backtester<a class="anchor-link" href="#3.4.-Backtester">¶</a></h3><p>Este módulo ejecuta backtests en las señales de trading y calcula métricas de rendimiento.</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Backtester</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">initial_capital</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">initial_capital</span> <span class="o">=</span> <span class="n">initial_capital</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">current_capital</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_capital</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">trades</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">portfolio_values</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<h3 id="3.4.-Backtester">3.4. Backtester<a class="anchor-link" href="#3.4.-Backtester">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>La clase <code>Backtester</code> es responsable de ejecutar backtests en las señales de trading y calcular métricas de rendimiento. Esta clase permite evaluar la efectividad de las estrategias de trading generadas por el <code>SignalGenerator</code> utilizando datos históricos.</p>
+<h4 id="Funcionalidad">Funcionalidad<a class="anchor-link" href="#Funcionalidad">¶</a></h4><ol>
+<li><p><strong>Atributos</strong></p>
+<ul>
+<li><code>data</code>: Un DataFrame de pandas que contiene las señales de trading generadas.</li>
+<li><code>initial_capital</code>: El capital inicial para el backtest.</li>
+<li><code>current_capital</code>: El capital actual durante el backtest.</li>
+<li><code>positions</code>: Una lista que almacena las posiciones abiertas durante el backtest.</li>
+<li><code>trades</code>: Una lista que almacena las operaciones realizadas durante el backtest.</li>
+<li><code>portfolio_values</code>: Una serie de pandas que contiene los valores del portafolio a lo largo del tiempo.</li>
+</ul>
+</li>
+<li><p><strong>Métodos</strong></p>
+<ul>
+<li><p><code>__init__(self, data: pd.DataFrame, initial_capital: float = 10000) -&gt; None</code></p>
+<ul>
+<li><strong>Descripción</strong>: Inicializa la clase <code>Backtester</code> con las señales de trading y el capital inicial.</li>
+<li><strong>Parámetros</strong>:<ul>
+<li><code>data</code> (pd.DataFrame): El DataFrame que contiene las señales de trading generadas.</li>
+<li><code>initial_capital</code> (float): El capital inicial para el backtest (por defecto, 10000).</li>
+</ul>
+</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Almacena las señales de trading en el atributo <code>data</code>.</li>
+<li>Establece el capital inicial y el capital actual.</li>
+<li>Inicializa las listas <code>positions</code> y <code>trades</code>.</li>
+<li>Inicializa la serie <code>portfolio_values</code>.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>run_backtest(self) -&gt; pd.DataFrame</code></p>
+<ul>
+<li><strong>Descripción</strong>: Ejecuta el backtest en las señales de trading y calcula los resultados.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Itera sobre las señales de trading y ejecuta las operaciones de compra y venta.</li>
+<li>Actualiza el valor del portafolio a lo largo del tiempo.</li>
+<li>Devuelve un DataFrame con las métricas de rendimiento calculadas.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>calculate_metrics(self) -&gt; pd.DataFrame</code></p>
+<ul>
+<li><strong>Descripción</strong>: Calcula las métricas de rendimiento del backtest, como el Sharpe Ratio, el Retorno Anual y el Máximo Drawdown.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Calcula el retorno porcentual del portafolio.</li>
+<li>Calcula el Sharpe Ratio utilizando los retornos.</li>
+<li>Calcula el Retorno Anual.</li>
+<li>Calcula el Máximo Drawdown.</li>
+<li>Devuelve un DataFrame con las métricas de rendimiento.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Ejemplo-de-Uso">Ejemplo de Uso<a class="anchor-link" href="#Ejemplo-de-Uso">¶</a></h4><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">crypto_analysis.signal_generator</span> <span class="kn">import</span> <span class="n">SignalGenerator</span>
+<span class="kn">from</span> <span class="nn">crypto_analysis.backtester</span> <span class="kn">import</span> <span class="n">Backtester</span>
 
-    <span class="k">def</span> <span class="nf">run_backtest</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-        <span class="c1"># Código para ejecutar backtest</span>
-        <span class="o">...</span>
+<span class="c1"># Crear una instancia de SignalGenerator y generar señales</span>
+<span class="n">signal_generator</span> <span class="o">=</span> <span class="n">SignalGenerator</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">signals</span> <span class="o">=</span> <span class="n">signal_generator</span><span class="o">.</span><span class="n">generate_signals</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">calculate_metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-        <span class="c1"># Código para calcular métricas</span>
-        <span class="o">...</span>
+<span class="c1"># Crear una instancia de Backtester</span>
+<span class="n">backtester</span> <span class="o">=</span> <span class="n">Backtester</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">signals</span><span class="p">,</span> <span class="n">initial_capital</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+
+<span class="c1"># Ejecutar el backtest</span>
+<span class="n">backtest_results</span> <span class="o">=</span> <span class="n">backtester</span><span class="o">.</span><span class="n">run_backtest</span><span class="p">()</span>
+
+<span class="c1"># Mostrar los resultados del backtest</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">backtest_results</span><span class="p">)</span>
 </pre></div>
+<p><a href="https://github.com/infante-manu/crypto_analysis/blob/main/crypto_analysis/backtester.py">Ver código fuente en GitHub</a></p>
 </div>
 </div>
 </div>
@@ -7877,29 +8088,77 @@ setup.py
     }
 </style>
 <div id="3.5-cryptoplotter"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=747ee0bd">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.5.-CryptoPlotter">3.5. CryptoPlotter<a class="anchor-link" href="#3.5.-CryptoPlotter">¶</a></h3><p>Este módulo maneja la visualización de datos de criptomonedas y señales de trading.</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CryptoPlotter</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+<h3 id="3.5.-CryptoPlotter">3.5. CryptoPlotter<a class="anchor-link" href="#3.5.-CryptoPlotter">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>La clase <code>CryptoPlotter</code> es responsable de manejar la visualización de datos de criptomonedas y señales de trading. Utiliza la biblioteca Plotly para generar gráficos interactivos que muestran las Bandas de Bollinger, las señales de compra y venta, y el valor del portafolio a lo largo del tiempo.</p>
+<h4 id="Funcionalidad">Funcionalidad<a class="anchor-link" href="#Funcionalidad">¶</a></h4><ol>
+<li><p><strong>Atributos</strong></p>
+<ul>
+<li><code>data</code>: Un DataFrame de pandas que contiene los datos de criptomonedas, incluyendo precios y bandas de Bollinger.</li>
+</ul>
+</li>
+<li><p><strong>Métodos</strong></p>
+<ul>
+<li><p><code>__init__(self, data: pd.DataFrame) -&gt; None</code></p>
+<ul>
+<li><strong>Descripción</strong>: Inicializa la clase <code>CryptoPlotter</code> con los datos de criptomonedas.</li>
+<li><strong>Parámetros</strong>:<ul>
+<li><code>data</code> (pd.DataFrame): El DataFrame que contiene los datos de criptomonedas.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>get_data_plot(self) -&gt; None</code></p>
+<ul>
+<li><strong>Descripción</strong>: Genera un gráfico interactivo que muestra los precios de cierre, las Bandas de Bollinger y las señales de compra y venta.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Crea una figura de Plotly.</li>
+<li>Añade la traza de los precios de cierre.</li>
+<li>Añade las trazas de las Bandas de Bollinger (superior e inferior).</li>
+<li>Rellena el área entre las Bandas de Bollinger.</li>
+<li>Añade las señales de compra y venta si están presentes en los datos.</li>
+<li>Configura el diseño del gráfico y lo muestra.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>get_portfolio_plot(self, portfolio_value: pd.Series, initial_capital: float) -&gt; None</code></p>
+<ul>
+<li><strong>Descripción</strong>: Genera un gráfico interactivo que muestra el valor del portafolio a lo largo del tiempo y las señales de compra y venta.</li>
+<li><strong>Parámetros</strong>:<ul>
+<li><code>portfolio_value</code> (pd.Series): Serie que contiene el valor del portafolio a lo largo del tiempo.</li>
+<li><code>initial_capital</code> (float): Capital inicial utilizado como referencia en el gráfico.</li>
+</ul>
+</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Crea una figura de Plotly.</li>
+<li>Añade la traza del valor del portafolio.</li>
+<li>Añade una línea que representa el capital inicial.</li>
+<li>Configura el diseño del gráfico y lo muestra.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Ejemplo-de-Uso">Ejemplo de Uso<a class="anchor-link" href="#Ejemplo-de-Uso">¶</a></h4><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">crypto_analysis.crypto_plotter</span> <span class="kn">import</span> <span class="n">CryptoPlotter</span>
 
-    <span class="k">def</span> <span class="nf">get_data_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="c1"># Código para graficar datos</span>
-        <span class="o">...</span>
+<span class="c1"># Supongamos que 'data' es un DataFrame con los datos de criptomonedas procesados</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'processed_crypto_data.csv'</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">get_portfolio_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">portfolio_value</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">initial_capital</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="c1"># Código para graficar el valor del portafolio</span>
-        <span class="o">...</span>
+<span class="c1"># Crear una instancia de CryptoPlotter</span>
+<span class="n">plotter</span> <span class="o">=</span> <span class="n">CryptoPlotter</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Generar y mostrar el gráfico de datos</span>
+<span class="n">plotter</span><span class="o">.</span><span class="n">get_data_plot</span><span class="p">()</span>
+
+<span class="c1"># Supongamos que 'portfolio_value' es una Serie con el valor del portafolio a lo largo del tiempo</span>
+<span class="n">portfolio_value</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Generar y mostrar el gráfico del portafolio</span>
+<span class="n">plotter</span><span class="o">.</span><span class="n">get_portfolio_plot</span><span class="p">(</span><span class="n">portfolio_value</span><span class="p">,</span> <span class="n">initial_capital</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
 </pre></div>
+<p><a href="https://github.com/infante-manu/crypto_analysis/blob/main/crypto_analysis/crypto_plotter.py">Ver código fuente en GitHub</a></p>
 </div>
 </div>
 </div>
@@ -7919,68 +8178,159 @@ setup.py
     }
 </style>
 <div id="3.6-tradingengine"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9a43e82e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.6.-TradingEngine">3.6. TradingEngine<a class="anchor-link" href="#3.6.-TradingEngine">¶</a></h3><p>Este módulo integra todos los componentes anteriores para ejecutar la estrategia de trading completa.</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TradingEngine</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pair</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">initial_capital</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pair</span> <span class="o">=</span> <span class="n">pair</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data_processor</span> <span class="o">=</span> <span class="n">CryptoDataProcessor</span><span class="p">(</span><span class="n">pair</span><span class="o">=</span><span class="n">pair</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">initial_capital</span> <span class="o">=</span> <span class="n">initial_capital</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">signal_generator</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">processed_data</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">signals</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">backtester</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">backtest_results</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">portfolio_values</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span> <span class="o">=</span> <span class="kc">None</span>
+<h3 id="3.6.-TradingEngine">3.6. TradingEngine<a class="anchor-link" href="#3.6.-TradingEngine">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>La clase <code>TradingEngine</code> es responsable de integrar todos los componentes anteriores para ejecutar la estrategia de trading completa. Esta clase coordina el procesamiento de datos, la generación de señales, la ejecución de backtests y la visualización de resultados.</p>
+<h4 id="Funcionalidad">Funcionalidad<a class="anchor-link" href="#Funcionalidad">¶</a></h4><ol>
+<li><p><strong>Atributos</strong></p>
+<ul>
+<li><code>pair</code>: El par de activos para el cual se desean obtener los datos (por ejemplo, 'BTCUSD').</li>
+<li><code>interval</code>: El intervalo de tiempo en minutos para los datos OHLC (por ejemplo, 1, 5, 15, 30, 60, 240, 1440).</li>
+<li><code>oversold</code>: El umbral del RSI para considerar que un activo está sobrevendido.</li>
+<li><code>overbought</code>: El umbral del RSI para considerar que un activo está sobrecomprado.</li>
+<li><code>initial_capital</code>: El capital inicial para el backtest.</li>
+<li><code>data_processor</code>: Una instancia de la clase <code>CryptoDataProcessor</code> para procesar los datos de criptomonedas.</li>
+<li><code>signal_generator</code>: Una instancia de la clase <code>SignalGenerator</code> para generar señales de trading.</li>
+<li><code>backtester</code>: Una instancia de la clase <code>Backtester</code> para ejecutar backtests en las señales de trading.</li>
+<li><code>plotter</code>: Una instancia de la clase <code>CryptoPlotter</code> para visualizar los datos y los resultados del backtest.</li>
+<li><code>processed_data</code>: Un DataFrame de pandas que contiene los datos procesados de criptomonedas.</li>
+<li><code>signals</code>: Un DataFrame de pandas que contiene las señales de trading generadas.</li>
+<li><code>backtest_results</code>: Un DataFrame de pandas que contiene los resultados del backtest.</li>
+<li><code>portfolio_values</code>: Una serie de pandas que contiene los valores del portafolio a lo largo del tiempo.</li>
+</ul>
+</li>
+<li><p><strong>Métodos</strong></p>
+<ul>
+<li><p><code>__init__(self, config: Config) -&gt; None</code></p>
+<ul>
+<li><strong>Descripción</strong>: Inicializa la clase <code>TradingEngine</code> con los parámetros de configuración proporcionados.</li>
+<li><strong>Parámetros</strong>:<ul>
+<li><code>config</code> (Config): Un objeto de configuración que contiene los parámetros necesarios para inicializar la clase.</li>
+</ul>
+</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Inicializa los atributos de la clase con los valores proporcionados en el objeto de configuración.</li>
+<li>Crea instancias de <code>CryptoDataProcessor</code>, <code>SignalGenerator</code>, <code>Backtester</code> y <code>CryptoPlotter</code>.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>process_data(self) -&gt; None</code></p>
+<ul>
+<li><strong>Descripción</strong>: Procesa los datos crudos para añadir indicadores técnicos.</li>
+<li><strong>Parámetros</strong>: Ninguno.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Obtiene los datos procesados utilizando el método <code>get_processed_data()</code> de <code>CryptoDataProcessor</code>.</li>
+<li>Crea una instancia de <code>SignalGenerator</code> con los datos procesados.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>generate_signals(self) -&gt; None</code></p>
+<ul>
+<li><strong>Descripción</strong>: Genera señales de trading y prepara los datos para la visualización.</li>
+<li><strong>Parámetros</strong>: Ninguno.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Genera señales de trading utilizando el método <code>generate_signals()</code> de <code>SignalGenerator</code>.</li>
+<li>Crea una instancia de <code>CryptoPlotter</code> con las señales generadas.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>backtest(self) -&gt; None</code></p>
+<ul>
+<li><strong>Descripción</strong>: Ejecuta el backtest en las señales generadas.</li>
+<li><strong>Parámetros</strong>: Ninguno.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Crea una instancia de <code>Backtester</code> con las señales generadas y el capital inicial.</li>
+<li>Ejecuta el backtest utilizando el método <code>run_backtest()</code> de <code>Backtester</code>.</li>
+<li>Obtiene los valores del portafolio utilizando el método <code>get_portfolio_values()</code> de <code>Backtester</code>.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>run(self) -&gt; None</code></p>
+<ul>
+<li><strong>Descripción</strong>: Ejecuta la estrategia de trading completa.</li>
+<li><strong>Parámetros</strong>: Ninguno.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Procesa los datos.</li>
+<li>Genera las señales de trading.</li>
+<li>Ejecuta el backtest.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>plot_strategy(self) -&gt; None</code></p>
+<ul>
+<li><strong>Descripción</strong>: Grafica la visualización de los datos de la estrategia.</li>
+<li><strong>Parámetros</strong>: Ninguno.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Utiliza el método <code>plot_data()</code> de <code>CryptoPlotter</code> para graficar los datos.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>plot_portfolio(self) -&gt; None</code></p>
+<ul>
+<li><strong>Descripción</strong>: Grafica el rendimiento del portafolio a lo largo del tiempo.</li>
+<li><strong>Parámetros</strong>: Ninguno.</li>
+<li><strong>Funcionamiento</strong>:<ol>
+<li>Utiliza el método <code>plot_portfolio()</code> de <code>CryptoPlotter</code> para graficar el valor del portafolio.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>get_data_plot(self)</code></p>
+<ul>
+<li><strong>Descripción</strong>: Devuelve el objeto de la gráfica de datos de Plotly.</li>
+<li><strong>Parámetros</strong>: Ninguno.</li>
+<li><strong>Retorno</strong>: El objeto de la gráfica de datos de Plotly.</li>
+</ul>
+</li>
+<li><p><code>get_portfolio_plot(self)</code></p>
+<ul>
+<li><strong>Descripción</strong>: Devuelve el objeto de la gráfica del portafolio de Plotly.</li>
+<li><strong>Parámetros</strong>: Ninguno.</li>
+<li><strong>Retorno</strong>: El objeto de la gráfica del portafolio de Plotly.</li>
+</ul>
+</li>
+<li><p><code>get_signals(self) -&gt; pd.DataFrame</code></p>
+<ul>
+<li><strong>Descripción</strong>: Devuelve las señales de trading generadas.</li>
+<li><strong>Parámetros</strong>: Ninguno.</li>
+<li><strong>Retorno</strong>: Un DataFrame de pandas que contiene las señales de trading generadas.</li>
+</ul>
+</li>
+<li><p><code>get_backtest_results(self) -&gt; pd.DataFrame</code></p>
+<ul>
+<li><strong>Descripción</strong>: Devuelve las métricas de rendimiento del backtest.</li>
+<li><strong>Parámetros</strong>: Ninguno.</li>
+<li><strong>Retorno</strong>: Un DataFrame de pandas que contiene las métricas de rendimiento del backtest.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Ejemplo-de-Uso">Ejemplo de Uso<a class="anchor-link" href="#Ejemplo-de-Uso">¶</a></h4><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">crypto_analysis.trading_engine</span> <span class="kn">import</span> <span class="n">TradingEngine</span>
 
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">process_data</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">generate_signals</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">backtest</span><span class="p">()</span>
+<span class="c1"># Crear una instancia de TradingEngine</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">TradingEngine</span><span class="p">(</span><span class="n">pair</span><span class="o">=</span><span class="s1">'ETHUSD'</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">process_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">processed_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_processor</span><span class="o">.</span><span class="n">get_processed_data</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">signal_generator</span> <span class="o">=</span> <span class="n">SignalGenerator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_data</span><span class="p">)</span>
+<span class="c1"># Ejecutar la estrategia de trading completa</span>
+<span class="n">engine</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">generate_signals</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">signals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">signal_generator</span><span class="o">.</span><span class="n">generate_signals</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span> <span class="o">=</span> <span class="n">CryptoPlotter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">signals</span><span class="p">)</span>
+<span class="c1"># Obtener los datos procesados</span>
+<span class="n">processed_data</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="n">data_processor</span><span class="o">.</span><span class="n">get_processed_data</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">processed_data</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">backtest</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">backtester</span> <span class="o">=</span> <span class="n">Backtester</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">signals</span><span class="p">,</span> <span class="n">initial_capital</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">initial_capital</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">backtest_results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">backtester</span><span class="o">.</span><span class="n">run_backtest</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">portfolio_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">backtester</span><span class="o">.</span><span class="n">get_portfolio_values</span><span class="p">()</span>
+<span class="c1"># Obtener las señales generadas</span>
+<span class="n">signals</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="n">get_signals</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">signals</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">'buy'</span><span class="p">,</span> <span class="s1">'sell'</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">'all'</span><span class="p">))</span>
 
-    <span class="k">def</span> <span class="nf">plot_strategy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">plot_data</span><span class="p">()</span>
-        <span class="k">return</span>
-
-    <span class="k">def</span> <span class="nf">plot_portafolio</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">plot_portfolio</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">portfolio_values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_capital</span><span class="p">)</span>
-        <span class="k">return</span>
-
-    <span class="k">def</span> <span class="nf">get_data_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">get_data_plot</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">get_portfolio_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">get_portfolio_plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">portfolio_values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_capital</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">get_signals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">signals</span>
-
-    <span class="k">def</span> <span class="nf">get_backtest_results</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">backtest_results</span>
+<span class="c1"># Obtener los resultados del backtest</span>
+<span class="n">backtest_results</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="n">get_backtest_results</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">backtest_results</span><span class="p">)</span>
 </pre></div>
+<p><a href="https://github.com/infante-manu/crypto_analysis/blob/main/crypto_analysis/trading_engine.py">Ver código fuente en GitHub</a></p>
 </div>
 </div>
 </div>
