@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+from datetime import datetime
 
 class KrakenAPIHandler:
     """Handles API interaction with Kraken for cryptocurrency data."""
@@ -46,6 +47,8 @@ class KrakenAPIHandler:
                 'vwap': float, 'volume': float, 'count': int
             })
             df['time'] = pd.to_datetime(df['time'], unit='s')
+            df = df.set_index("time")
+            df = df.sort_index(ascending=True)
             return df
 
         except requests.RequestException as e:
@@ -74,13 +77,15 @@ class KrakenAPIHandler:
         """Returns asset pairs available on Kraken."""
         return self.fetch_asset_pairs()
 
+
 # Usage example:
 if __name__ == '__main__':
     # Example usage
     api = KrakenAPIHandler()
     pairs = api.fetch_asset_pairs()
     print(pairs)
-    data = api.fetch_ohlc_data("ETHUSD", interval = 5)
-    data = data.sort_values(by='time', ascending=False)
+    # Example usage of date_to_timestamp
+    data = api.fetch_ohlc_data("ETHUSD", interval = 1440, since = timestamp)
+    data = data.sort_index(ascending=True)
     print(data.head())
     print(data.info())

@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-
 class SignalGenerator:
     def __init__(self, data: pd.DataFrame) -> None:
         """

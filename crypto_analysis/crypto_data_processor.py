@@ -5,17 +5,18 @@ from crypto_analysis.kraken_api_handler import KrakenAPIHandler
 class CryptoDataProcessor:
     """Processes and analyzes cryptocurrency data."""
     
-    def __init__(self, pair : str, interval : int = 1440, oversold : int = 30, overbought : int = 70) -> None:
+    def __init__(self, pair : str, interval : int = 1440, oversold : int = 30, overbought : int = 70, since : int = None) -> None:
         self.kraken_api_handler = KrakenAPIHandler()
         self.pair = pair
         self.interval = interval
         self.data = None
         self.oversold = oversold
         self.overbought = overbought
+        self.since = since
         self.fetch_data()
 
     def fetch_data(self):
-        self.data = self.kraken_api_handler.fetch_ohlc_data(self.pair, self.interval)
+        self.data = self.kraken_api_handler.fetch_ohlc_data(self.pair, self.interval, self.since)
     
     def get_processed_data(self) -> pd.DataFrame:
         df = self.data

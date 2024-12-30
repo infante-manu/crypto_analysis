@@ -56,7 +56,7 @@ class CryptoPlotter:
         # Layout
         fig.update_layout(title='Bollinger Bands & RSI Trading Strategy',
                           xaxis_title='Dates',
-                          yaxis_title='Price in USD',
+                          yaxis_title='Price in Selected Pair',
                           hovermode='x unified')
 
         return fig

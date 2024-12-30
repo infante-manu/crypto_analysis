@@ -70,18 +70,18 @@ class Backtester:
 
         # Compile results
         results = {
-            'Initial Capital': [self.initial_capital],
-            'Final Capital': [self.current_capital],
-            'Total Trades': [len(self.trades)],
-            'Winning Trades': [self._count_winning_trades()],
-            'Losing Trades': [self._count_losing_trades()],
-            'Total Profit': [self.current_capital - self.initial_capital],
-            'Sharpe Ratio': [sharpe_ratio],
-            'Annual Return (%)': [annual_return],
-            'Max Drawdown (%)': [max_drawdown]
+            'Initial Capital': self.initial_capital,
+            'Final Capital': self.current_capital,
+            'Total Trades': len(self.trades),
+            'Winning Trades': self._count_winning_trades(),
+            'Losing Trades': self._count_losing_trades(),
+            'Total Profit': self.current_capital - self.initial_capital,
+            'Sharpe Ratio': sharpe_ratio,
+            'Annual Return (%)': annual_return,
+            'Max Drawdown (%)': max_drawdown
         }
 
-        return pd.DataFrame(results)
+        return pd.Series(results)
 
     def _calculate_sharpe_ratio(self, returns: pd.Series) -> float:
         """Calculates the Sharpe Ratio of the backtest."""
