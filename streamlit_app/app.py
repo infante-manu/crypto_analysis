@@ -2,9 +2,6 @@ import streamlit as st
 from crypto_analysis.trading_engine import TradingEngine, Config
 from crypto_analysis.kraken_api_handler import KrakenAPIHandler
 from constants import INTERVAL_MAP
-from utils import (
-    render_backtest_results
-)
 
 def main():
     """
