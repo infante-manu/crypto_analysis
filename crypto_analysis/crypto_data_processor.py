@@ -18,13 +18,6 @@ class CryptoDataProcessor:
     def fetch_data(self):
         self.data = self.kraken_api_handler.fetch_ohlc_data(self.pair, self.interval, self.since)
     
-    def get_processed_data(self) -> pd.DataFrame:
-        df = self.data
-        df = self.calculate_bollinger_bands(df)
-        df = self.calculate_rsi(df)
-        df = df.dropna(subset = ['moving_avg', 'moving_std_dev', 'upper_band', 'lower_band', 'rsi'])
-        return df
-
     def calculate_bollinger_bands(self, df : pd.DataFrame(), column: str = 'close', window: int = 20, num_std_dev: int = 2) -> pd.DataFrame:
         """
         Calculate Bollinger Bands for a given DataFrame with closing prices.
@@ -73,6 +66,12 @@ class CryptoDataProcessor:
 
         return df
 
+    def get_processed_data(self) -> pd.DataFrame:
+        df = self.data
+        df = self.calculate_bollinger_bands(df)
+        df = self.calculate_rsi(df)
+        df = df.dropna(subset = ['moving_avg', 'moving_std_dev', 'upper_band', 'lower_band', 'rsi'])
+        return df
 
 if __name__ == '__main__':
     # Example usage
