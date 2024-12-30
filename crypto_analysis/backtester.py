@@ -61,7 +61,7 @@ class Backtester:
         """Updates the portfolio value based on current capital."""
         self.portfolio_values.at[index] = self.current_capital
 
-    def calculate_metrics(self) -> pd.DataFrame:
+    def calculate_metrics(self) -> pd.Series:
         """Calculates backtest metrics like Sharpe Ratio, Annual Return, and Max Drawdown."""
         returns = self.portfolio_values.pct_change().dropna()
         sharpe_ratio = self._calculate_sharpe_ratio(returns)

@@ -7510,7 +7510,7 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=63e3c743">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3d7f041e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7543,6 +7543,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 <li><a href="#8-mecanismos-para-la-reproducci%C3%B3n-del-entorno">Mecanismos para la Reproducción del Entorno</a></li>
 <li><a href="#9-distribuci%C3%B3n-del-proyecto">Distribución del Proyecto</a></li>
 <li><a href="#10-conclusi%C3%B3n">Conclusión</a></li>
+<li><a href="#11-glosario">Glosario</a></li>
 </ol>
 </div>
 </div>
@@ -7573,7 +7574,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.-Descripci%C3%B3n-del-Proyecto">1. Descripción del Proyecto<a class="anchor-link" href="#1.-Descripci%C3%B3n-del-Proyecto">¶</a></h2><p>Este proyecto tiene como objetivo analizar datos de criptomonedas, generar señales de trading y visualizar tendencias de precios. Para ello, se emplea una combinación de Bandas de Bollinger y el Índice de Fuerza Relativa (RSI), un indicador popular en el análisis técnico que mide el impulso y la velocidad de los movimientos de precios. Finalmente, se simula una estrategia de trading (backtesting) utilizando las señales generadas, considerando un capital inicial y un período determinado.</p>
+<h2 id="1.-Descripci%C3%B3n-del-Proyecto">1. Descripción del Proyecto<a class="anchor-link" href="#1.-Descripci%C3%B3n-del-Proyecto">¶</a></h2><p>Este proyecto tiene como objetivo analizar datos de criptomonedas, generar señales de trading y visualizar tendencias de precios. Para ello, se emplea una combinación de Bandas de Bollinger y el Índice de Fuerza Relativa (RSI), un indicador popular en el análisis técnico que mide el impulso y la velocidad de los movimientos de precios. Finalmente, se simula una estrategia de trading (backtesting) utilizando las señales generadas, considerando un capital inicial y un período determinado que el usuario puede acceder en la siguiente <a href="https://crypto-trading-simulator-2137aa365359.herokuapp.com">app</a>.</p>
 </div>
 </div>
 </div>
@@ -7614,10 +7615,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 <h2 id="2-estructura-del-código-y-archivos">Estructura del Codigo y Archivos</h2>
 La estructura del proyecto es la siguiente:
 
-<div class="highlight"><pre><span></span>├──<span class="w"> </span>CHANGELOG.md<span class="w">                  </span><span class="c1"># Archivo de registro de cambios del proyecto</span>
-├──<span class="w"> </span>README.md<span class="w">                     </span><span class="c1"># Archivo de descripción general del proyecto</span>
-├──<span class="w"> </span>build.py<span class="w">                      </span><span class="c1"># Script para construir el proyecto</span>
-├──<span class="w"> </span>crypto_analysis<span class="w">               </span><span class="c1"># Directorio principal del análisis de criptomonedas</span>
+<div class="highlight"><pre><span></span>├──<span class="w"> </span>crypto_analysis<span class="w">               </span><span class="c1"># Directorio principal del análisis de criptomonedas</span>
 │<span class="w">   </span>├──<span class="w"> </span>__init__.py<span class="w">               </span><span class="c1"># Archivo de inicialización del paquete</span>
 │<span class="w">   </span>├──<span class="w"> </span>backtester.py<span class="w">             </span><span class="c1"># Módulo para ejecutar backtests en las señales de trading</span>
 │<span class="w">   </span>├──<span class="w"> </span>crypto_data_processor.py<span class="w">  </span><span class="c1"># Módulo para procesar y analizar datos de criptomonedas</span>
@@ -7633,19 +7631,20 @@ La estructura del proyecto es la siguiente:
 │<span class="w">   </span>├──<span class="w"> </span>memoria.html<span class="w">              </span><span class="c1"># Archivo HTML generado de la memoria del proyecto</span>
 │<span class="w">   </span>├──<span class="w"> </span>memoria.ipynb<span class="w">             </span><span class="c1"># Notebook principal de la memoria del proyecto</span>
 │<span class="w">   </span>└──<span class="w"> </span>other<span class="w">                     </span><span class="c1"># Directorio con otros notebooks</span>
-├──<span class="w"> </span>main.py<span class="w">                       </span><span class="c1"># Archivo principal para ejecutar el proyecto</span>
 ├──<span class="w"> </span>notebooks<span class="w">                     </span><span class="c1"># Directorio para los notebooks de Jupyter</span>
 │<span class="w">   </span>└──<span class="w"> </span>analysis_notebook.ipynb<span class="w">   </span><span class="c1"># Notebook para el análisis de datos</span>
-├──<span class="w"> </span>requirements.txt<span class="w">              </span><span class="c1"># Archivo con las dependencias del proyecto</span>
-├──<span class="w"> </span>run.sh<span class="w">                        </span><span class="c1"># Script para ejecutar la aplicación Streamlit</span>
-├──<span class="w"> </span>setup.py<span class="w">                      </span><span class="c1"># Archivo de configuración para la distribución del proyecto</span>
+└──<span class="w"> </span>tests<span class="w">                         </span><span class="c1"># Directorio para las pruebas unitarias</span>
+<span class="w">    </span>├──<span class="w"> </span>test_trading_engine.py<span class="w">        </span><span class="c1"># Pruebas unitarias para el módulo trading_engine</span>
 ├──<span class="w"> </span>streamlit_app<span class="w">                 </span><span class="c1"># Directorio para la aplicación Streamlit</span>
 │<span class="w">   </span>└──<span class="w"> </span>app.py<span class="w">                    </span><span class="c1"># Archivo principal de la aplicación Streamlit</span>
-└──<span class="w"> </span>tests<span class="w">                         </span><span class="c1"># Directorio para las pruebas unitarias</span>
-<span class="w">    </span>├──<span class="w"> </span>test_crypto_data_processor.py<span class="w"> </span><span class="c1"># Pruebas unitarias para el módulo crypto_data_processor</span>
-<span class="w">    </span>├──<span class="w"> </span>test_crypto_plotter.py<span class="w">        </span><span class="c1"># Pruebas unitarias para el módulo crypto_plotter</span>
-<span class="w">    </span>├──<span class="w"> </span>test_kraken_api_handler.py<span class="w">    </span><span class="c1"># Pruebas unitarias para el módulo kraken_api_handler</span>
-<span class="w">    </span>└──<span class="w"> </span>test_signal_generator.py<span class="w">      </span><span class="c1"># Pruebas unitarias para el módulo signal_generator</span>
+│<span class="w">   </span>└──<span class="w"> </span>constants.py<span class="w">              </span><span class="c1"># Constantes para inputs del usuario</span>
+├──<span class="w"> </span>README.md<span class="w">                     </span><span class="c1"># Archivo de descripción general del proyecto</span>
+├──<span class="w"> </span>build.py<span class="w">                      </span><span class="c1"># Script para construir el proyecto</span>
+├──<span class="w"> </span>run.sh<span class="w">                        </span><span class="c1"># Bash script para ejecutar la aplicación Streamlit</span>
+├──<span class="w"> </span>setup.sh<span class="w">                      </span><span class="c1"># Bash script con configuración para setear aplicación en Heroku</span>
+├──<span class="w"> </span>main.py<span class="w">                       </span><span class="c1"># Archivo principal para ejecutar el proyecto</span>
+├──<span class="w"> </span>requirements.txt<span class="w">              </span><span class="c1"># Fichero con dependencias</span>
+├──<span class="w"> </span>Procfile<span class="w">                      </span><span class="c1"># Startup bash script para ejecutar en Heroku</span>
 </pre></div>
 </div>
 </div>
@@ -7686,7 +7685,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 </style>
 <h2 id="3.-Descripci%C3%B3n-de-los-M%C3%B3dulos">3. Descripción de los Módulos<a class="anchor-link" href="#3.-Descripci%C3%B3n-de-los-M%C3%B3dulos">¶</a></h2><p>El siguiente Diagrama de Secuencia muestra el flujo de interacción entre las clases del proyecto y cómo TradingEngine actúa como el coordinador principal de la estrategia de trading:</p>
 <div style="text-align: center;">
-<img alt="Diagrama de Secuencia" src="/Users/manuel.infante/Library/CloudStorage/GoogleDrive-minfante.1@alumni.unav.es/My Drive/Repositorios/python-for-data-analysis/crypto_analysis/docs/images/sequence-diagram.jpg" style="width: 75%;"/>
+<img alt="Diagrama de Secuencia" src="/Users/manuel.infante/Library/CloudStorage/GoogleDrive-minfante.1@alumni.unav.es/My Drive/Repositorios/python-for-data-analysis/trading_simulator/docs/images/sequence-diagram.jpg" style="width: 75%;"/>
 </div>
 </div>
 </div>
@@ -7726,7 +7725,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
     }
 </style>
 <div id="3.1-krakenapihandler"></div>
-<h3 id="3.1.-KrakenAPIHandler">3.1. KrakenAPIHandler<a class="anchor-link" href="#3.1.-KrakenAPIHandler">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>La clase <code>KrakenAPIHandler</code> es responsable de manejar la interacción con la API de Kraken para obtener datos de criptomonedas. Esta clase proporciona métodos para obtener datos OHLC (Open, High, Low, Close) y pares de activos disponibles en la plataforma Kraken.</p>
+<h3 id="3.1.-KrakenAPIHandler">3.1. KrakenAPIHandler<a class="anchor-link" href="#3.1.-KrakenAPIHandler">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>La clase <code>KrakenAPIHandler</code> es responsable de manejar la interacción con los datos de mercado a traves de la <a href="https://docs.kraken.com/api/docs/category/rest-api/market-data">API de Kraken</a> para obtener datos de criptomonedas. Esta clase proporciona métodos para obtener datos OHLC (Open, High, Low, Close) y pares de activos disponibles en la plataforma Kraken.</p>
 <h4 id="Funcionalidad">Funcionalidad<a class="anchor-link" href="#Funcionalidad">¶</a></h4><ol>
 <li><p><strong>Atributos</strong></p>
 <ul>
@@ -7768,17 +7767,6 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 </li>
 </ul>
 </li>
-<li><p><code>get_asset_pairs() -&gt; list</code></p>
-<ul>
-<li><strong>Descripción</strong>: Este método devuelve la lista de pares de activos almacenada en la instancia de la clase.</li>
-<li><strong>Parámetros</strong>: Ninguno.</li>
-<li><strong>Retorno</strong>: Una lista de pares de activos disponibles.</li>
-<li><strong>Funcionamiento</strong>:<ol>
-<li>Devuelve la lista de pares de activos que se ha almacenado previamente en la instancia de la clase.</li>
-</ol>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 </ol>
@@ -7792,9 +7780,6 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 
 <span class="c1"># Obtener la lista de pares de activos disponibles</span>
 <span class="n">asset_pairs</span> <span class="o">=</span> <span class="n">api_handler</span><span class="o">.</span><span class="n">fetch_asset_pairs</span><span class="p">()</span>
-
-<span class="c1"># Obtener la lista de pares de activos almacenada en la instancia</span>
-<span class="n">stored_asset_pairs</span> <span class="o">=</span> <span class="n">api_handler</span><span class="o">.</span><span class="n">get_asset_pairs</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7831,9 +7816,9 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 <li><p><strong>Atributos</strong></p>
 <ul>
 <li><code>pair</code>: El par de activos para el cual se desean obtener los datos (por ejemplo, 'BTCUSD').</li>
-<li><code>interval</code>: El intervalo de tiempo en minutos para los datos OHLC (por ejemplo, 1, 5, 15, 30, 60, 240, 1440).</li>
-<li><code>oversold</code>: El umbral del RSI para considerar que un activo está sobrevendido.</li>
-<li><code>overbought</code>: El umbral del RSI para considerar que un activo está sobrecomprado.</li>
+<li><code>interval</code>: El intervalo de tiempo en minutos para los datos OHLC (1, 5, 15, 30, 60, 240, 1440, 10080, 21600).</li>
+<li><code>oversold</code>: El umbral del RSI para considerar que un activo está sobrevendido, default 30.</li>
+<li><code>overbought</code>: El umbral del RSI para considerar que un activo está sobrecomprado, default 70.</li>
 <li><code>data</code>: Un DataFrame de pandas que contiene los datos OHLC obtenidos de la API de Kraken.</li>
 </ul>
 </li>
@@ -7843,8 +7828,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 <ul>
 <li><strong>Descripción</strong>: Este método obtiene datos OHLC para un par de activos específico y un intervalo de tiempo determinado.</li>
 <li><strong>Funcionamiento</strong>:<ol>
-<li>Realiza una solicitud HTTP GET a la API de Kraken utilizando la URL <code>OHLC_URL</code>.</li>
-<li>Procesa la respuesta JSON y convierte los datos en un DataFrame de pandas.</li>
+<li>Realiza una solicitud HTTP GET a la API de Kraken utilizando el método <code>fetch_ohlc_data</code> de la clase <code>KrakenAPIHandler</code>.</li>
 <li>Almacena el DataFrame en el atributo <code>data</code>.</li>
 </ol>
 </li>
@@ -7856,8 +7840,8 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 <li><strong>Parámetros</strong>:<ul>
 <li><code>df</code> (pd.DataFrame): El DataFrame que contiene los datos OHLC.</li>
 <li><code>column</code> (str): La columna sobre la cual se calcularán las Bandas de Bollinger (por defecto, 'close').</li>
-<li><code>window</code> (int): El número de periodos para calcular la media móvil.</li>
-<li><code>num_std_dev</code> (int): El número de desviaciones estándar para calcular las bandas superior e inferior.</li>
+<li><code>window</code> (int): El número de periodos para calcular la media móvil. Default 20 periodos.</li>
+<li><code>num_std_dev</code> (int): El número de desviaciones estándar para calcular las bandas superior e inferior. Default 2.</li>
 </ul>
 </li>
 <li><strong>Retorno</strong>: Un DataFrame de pandas que contiene las Bandas de Bollinger calculadas.</li>
@@ -7869,7 +7853,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 <li><strong>Parámetros</strong>:<ul>
 <li><code>df</code> (pd.DataFrame): El DataFrame que contiene los datos OHLC.</li>
 <li><code>column</code> (str): La columna sobre la cual se calculará el RSI (por defecto, 'close').</li>
-<li><code>period</code> (int): El número de periodos para calcular el RSI.</li>
+<li><code>period</code> (int): El número de periodos para calcular el RSI. Default 14.</li>
 </ul>
 </li>
 <li><strong>Retorno</strong>: Un DataFrame de pandas que contiene el RSI calculado.</li>
@@ -7882,7 +7866,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 <li>Obtiene los datos OHLC utilizando el método <code>fetch_data()</code>.</li>
 <li>Calcula las Bandas de Bollinger utilizando el método <code>calculate_bollinger_bands()</code>.</li>
 <li>Calcula el RSI utilizando el método <code>calculate_rsi()</code>.</li>
-<li>Devuelve un DataFrame que contiene los datos procesados, incluyendo las Bandas de Bollinger y el RSI.</li>
+<li>Devuelve un DataFrame que contiene los datos procesados, incluyendo las Bandas de Bollinger y el RSI. Se dropea los nulos de moving_avg ya que solo tenemos valores luego de la ventana.</li>
 </ol>
 </li>
 </ul>
@@ -7905,13 +7889,15 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3831d867">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c26b0c70">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a href="https://github.com/infante-manu/crypto_analysis/blob/main/crypto_analysis/crypto_data_processor.py">Ver código fuente en GitHub</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Bollinger_Bands#:~:text=Bollinger%20Bands%20consist%20of%20an,average%20(MA%20%E2%88%92%20K%CF%83">Bandas de Bollinger - Wikipedia</a>.)</p>
+<p><a href="https://en.wikipedia.org/wiki/Relative_strength_index">Índice de Fuerza Relativa - Wikipedia</a></p>
 </div>
 </div>
 </div>
@@ -7931,7 +7917,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
     }
 </style>
 <div id="3.3-signalgenerator"></div>
-<h3 id="3.3.-SignalGenerator">3.3. SignalGenerator<a class="anchor-link" href="#3.3.-SignalGenerator">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>La clase <code>SignalGenerator</code> es responsable de generar señales de trading basadas en los datos procesados de criptomonedas. Utiliza indicadores técnicos como las Bandas de Bollinger y el Índice de Fuerza Relativa (RSI) para identificar oportunidades de compra y venta.</p>
+<h3 id="3.3.-SignalGenerator">3.3. SignalGenerator<a class="anchor-link" href="#3.3.-SignalGenerator">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>La clase <code>SignalGenerator</code> es responsable de generar señales de trading basadas en los datos procesados de criptomonedas. Utiliza indicadores técnicos, Bandas de Bollinger y el Índice de Fuerza Relativa (RSI) para identificar oportunidades de compra y venta.</p>
 <h4 id="Funcionalidad">Funcionalidad<a class="anchor-link" href="#Funcionalidad">¶</a></h4><ol>
 <li><p><strong>Atributos</strong></p>
 <ul>
@@ -7978,6 +7964,109 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 </ul>
 </li>
 </ol>
+<h4 id="Descripci%C3%B3n-del-Proceso-de-Generaci%C3%B3n-de-Se%C3%B1ales-con-el-C%C3%B3digo-Implementado">Descripción del Proceso de Generación de Señales con el Código Implementado<a class="anchor-link" href="#Descripci%C3%B3n-del-Proceso-de-Generaci%C3%B3n-de-Se%C3%B1ales-con-el-C%C3%B3digo-Implementado">¶</a></h4><p>A continuación, se detallan las condiciones chequeadas en cada iteración del proceso y cómo se implementan en el código.</p>
+<div style="text-align: center;">
+<img alt="Diagrama de Secuencia" src="../images/signal-generator.jpg" style="width: 75%;"/>
+</div>
+<h5 id="1.-Validaci%C3%B3n-de-Datos">1. <strong>Validación de Datos</strong><a class="anchor-link" href="#1.-Validaci%C3%B3n-de-Datos">¶</a></h5><ul>
+<li><strong>Descripción:</strong> Antes de generar las señales, el sistema valida que los datos proporcionados contengan todas las columnas requeridas para realizar los cálculos necesarios.</li>
+<li><strong>Código:</strong><ul>
+<li>La función <code>_validate_data(data)</code> verifica que las columnas necesarias, como <code>close</code>, <code>upper_band</code>, <code>lower_band</code>, <code>rsi</code>, <code>over_sold</code>, y <code>over_bought</code>, estén presentes en el <code>DataFrame</code> proporcionado.</li>
+<li>Si alguna columna falta, se lanza un <code>ValueError</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_validate_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">required_columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'close'</span><span class="p">,</span> <span class="s1">'upper_band'</span><span class="p">,</span> <span class="s1">'lower_band'</span><span class="p">,</span> <span class="s1">'rsi'</span><span class="p">,</span> <span class="s1">'over_sold'</span><span class="p">,</span> <span class="s1">'over_bought'</span><span class="p">}</span>
+    <span class="n">missing_columns</span> <span class="o">=</span> <span class="n">required_columns</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">missing_columns</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Data is missing required columns: </span><span class="si">{</span><span class="n">missing_columns</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</li>
+</ul>
+<h5 id="2.-Iteraci%C3%B3n-sobre-las-Filas">2. <strong>Iteración sobre las Filas</strong><a class="anchor-link" href="#2.-Iteraci%C3%B3n-sobre-las-Filas">¶</a></h5><ul>
+<li><strong>Descripción:</strong> Una vez validados los datos, el sistema itera sobre cada fila para evaluar si corresponde una señal de compra o de venta.</li>
+<li><strong>Código:</strong><ul>
+<li>En el método <code>generate_signals()</code>, se recorre el <code>DataFrame</code> utilizando un bucle <code>for</code> y el índice de cada fila.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+</pre></div>
+</li>
+</ul>
+<h5 id="3.-Chequeo-de-la-Se%C3%B1al-de-Compra">3. <strong>Chequeo de la Señal de Compra</strong><a class="anchor-link" href="#3.-Chequeo-de-la-Se%C3%B1al-de-Compra">¶</a></h5><ul>
+<li><strong>Descripción:</strong> Se verifica si la fila contiene una señal de compra. Esta señal ocurre cuando:<ul>
+<li>El precio de cierre es menor que la banda inferior de Bollinger.</li>
+<li>El RSI es inferior al umbral de sobreventa.</li>
+<li>La posición actual es cero (es decir, no se tiene una posición abierta).</li>
+</ul>
+</li>
+<li><strong>Código:</strong><ul>
+<li>Si se cumple esta condición, se registra el precio de compra en la lista <code>buy_price</code> y la señal de venta se marca como <code>NaN</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'close'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'lower_band'</span><span class="p">]</span> <span class="ow">and</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'rsi'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'over_sold'</span><span class="p">]</span> <span class="ow">and</span> <span class="n">position</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">position</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">buy_price</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'close'</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">sell_price</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</pre></div>
+</li>
+</ul>
+<h5 id="4.-Chequeo-de-la-Se%C3%B1al-de-Venta">4. <strong>Chequeo de la Señal de Venta</strong><a class="anchor-link" href="#4.-Chequeo-de-la-Se%C3%B1al-de-Venta">¶</a></h5><ul>
+<li><strong>Descripción:</strong> Si no se ha generado una señal de compra, se verifica si la fila contiene una señal de venta. Esta señal ocurre cuando:<ul>
+<li>El precio de cierre es mayor que la banda superior de Bollinger.</li>
+<li>El RSI es mayor que el umbral de sobrecompra.</li>
+<li>La posición actual es 1 (es decir, se tiene una posición de compra abierta).</li>
+</ul>
+</li>
+<li><strong>Código:</strong><ul>
+<li>Si se cumple esta condición, se registra el precio de venta en la lista <code>sell_price</code> y la señal de compra se marca como <code>NaN</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">elif</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'close'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'upper_band'</span><span class="p">]</span> <span class="ow">and</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'rsi'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'over_bought'</span><span class="p">]</span> <span class="ow">and</span> <span class="n">position</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">position</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">sell_price</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'close'</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">buy_price</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</pre></div>
+</li>
+</ul>
+<h5 id="5.-Acci%C3%B3n-por-Defecto:-Mantener">5. <strong>Acción por Defecto: Mantener</strong><a class="anchor-link" href="#5.-Acci%C3%B3n-por-Defecto:-Mantener">¶</a></h5><ul>
+<li><strong>Descripción:</strong> Si ninguna de las condiciones anteriores se cumple, se mantiene la acción sin realizar ningún cambio (se marca tanto la señal de compra como la de venta como <code>NaN</code>).</li>
+<li><strong>Código:</strong><div class="highlight"><pre><span></span><span class="k">else</span><span class="p">:</span>
+    <span class="n">buy_price</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">sell_price</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</pre></div>
+</li>
+</ul>
+<h5 id="6.-Verificaci%C3%B3n-de-Datos-V%C3%A1lidos">6. <strong>Verificación de Datos Válidos</strong><a class="anchor-link" href="#6.-Verificaci%C3%B3n-de-Datos-V%C3%A1lidos">¶</a></h5><ul>
+<li><strong>Descripción:</strong> Antes de realizar los chequeos de las señales, se valida que los valores relevantes (precio de cierre, bandas de Bollinger y RSI) no estén vacíos (<code>NaN</code>).</li>
+<li><strong>Código:</strong><ul>
+<li>Si algún valor está ausente, se lanza un <code>ValueError</code> indicando la fila con datos inválidos.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'close'</span><span class="p">])</span> <span class="ow">and</span> \
+   <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'lower_band'</span><span class="p">])</span> <span class="ow">and</span> \
+   <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'rsi'</span><span class="p">])</span> <span class="ow">and</span> \
+   <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'upper_band'</span><span class="p">]):</span>
+</pre></div>
+</li>
+</ul>
+<h5 id="7.-Devolver-el-DataFrame-Actualizado">7. <strong>Devolver el DataFrame Actualizado</strong><a class="anchor-link" href="#7.-Devolver-el-DataFrame-Actualizado">¶</a></h5><ul>
+<li><strong>Descripción:</strong> Una vez procesadas todas las filas, el <code>DataFrame</code> se actualiza con las señales de compra y venta correspondientes y se devuelve.</li>
+<li><strong>Código:</strong><ul>
+<li>Las listas <code>buy_price</code> y <code>sell_price</code> se asignan como nuevas columnas en el <code>DataFrame</code>.</li>
+<li>Finalmente, el <code>DataFrame</code> actualizado se retorna.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'buy'</span><span class="p">]</span> <span class="o">=</span> <span class="n">buy_price</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'sell'</span><span class="p">]</span> <span class="o">=</span> <span class="n">sell_price</span>
+
+<span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</li>
+</ul>
+<h5 id="8.-Manejo-de-Errores">8. <strong>Manejo de Errores</strong><a class="anchor-link" href="#8.-Manejo-de-Errores">¶</a></h5><ul>
+<li><strong>Descripción:</strong> Si ocurre un error durante el procesamiento (por ejemplo, datos faltantes o un error inesperado), se captura la excepción y se lanza un <code>RuntimeError</code> con un mensaje adecuado.</li>
+<li><strong>Código:</strong><div class="highlight"><pre><span></span><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Failed to generate signals: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</li>
+</ul>
+<p>Este código implementa un proceso robusto para generar señales de compra y venta basadas en criterios específicos de las Bandas de Bollinger y el RSI, y maneja adecuadamente los casos de error y validación de datos.</p>
 <h4 id="Ejemplo-de-Uso">Ejemplo de Uso<a class="anchor-link" href="#Ejemplo-de-Uso">¶</a></h4><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">crypto_analysis.signal_generator</span> <span class="kn">import</span> <span class="n">SignalGenerator</span>
 
@@ -8054,7 +8143,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 </li>
 </ul>
 </li>
-<li><p><code>run_backtest(self) -&gt; pd.DataFrame</code></p>
+<li><p><code>run_backtest(self) -&gt; pd.Series</code></p>
 <ul>
 <li><strong>Descripción</strong>: Ejecuta el backtest en las señales de trading y calcula los resultados.</li>
 <li><strong>Funcionamiento</strong>:<ol>
@@ -8065,7 +8154,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 </li>
 </ul>
 </li>
-<li><p><code>calculate_metrics(self) -&gt; pd.DataFrame</code></p>
+<li><p><code>calculate_metrics(self) -&gt; pd.Series</code></p>
 <ul>
 <li><strong>Descripción</strong>: Calcula las métricas de rendimiento del backtest, como el Sharpe Ratio, el Retorno Anual y el Máximo Drawdown.</li>
 <li><strong>Funcionamiento</strong>:<ol>
@@ -8073,7 +8162,8 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 <li>Calcula el Sharpe Ratio utilizando los retornos.</li>
 <li>Calcula el Retorno Anual.</li>
 <li>Calcula el Máximo Drawdown.</li>
-<li>Devuelve un DataFrame con las métricas de rendimiento.</li>
+<li>Devuelve un DataFrame con las métricas de rendimiento.
+Para una explicación detallada de estos términos y otros indicadores financieros, consulta el <a href="#11-glosario">Glosario</a> del documento.</li>
 </ol>
 </li>
 </ul>
@@ -8416,13 +8506,41 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 <div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </pre></div>
 </li>
-<li><p>Ejecuta el script principal:</p>
+<li><p>Ejecución del Script Principal</p>
+</li>
+</ol>
+<p>El script principal realiza el análisis completo utilizando los parámetros configurados. Puedes ejecutarlo con valores predeterminados o personalizar los parámetros mediante la línea de comandos.</p>
+<ul>
+<li><p><strong>Ejecutar con valores por defecto:</strong></p>
 <div class="highlight"><pre><span></span>python<span class="w"> </span>main.py
 </pre></div>
 </li>
-<li><p>Para ejecutar la aplicación Streamlit:</p>
+<li><p><strong>Ejecutar con parámetros personalizados:</strong></p>
+<div class="highlight"><pre><span></span>python<span class="w"> </span>main.py<span class="w"> </span>--pair<span class="w"> </span>BTCUSDT<span class="w"> </span>--interval<span class="w"> </span><span class="m">60</span><span class="w"> </span>--oversold<span class="w"> </span><span class="m">20</span><span class="w"> </span>--overbought<span class="w"> </span><span class="m">80</span><span class="w"> </span>--initial_capital<span class="w"> </span><span class="m">5000</span><span class="w"> </span>--since<span class="w"> </span><span class="m">1609459200</span>
+</pre></div>
+<ul>
+<li><code>--pair</code>: Par de criptomonedas a analizar (por ejemplo, <code>BTCUSDT</code>).</li>
+<li><code>--interval</code>: Intervalo en minutos para el análisis (por ejemplo, <code>60</code> para una hora).</li>
+<li><code>--oversold</code>: Umbral de sobreventa RSI (por ejemplo, <code>20</code>).</li>
+<li><code>--overbought</code>: Umbral de sobrecompra RSI (por ejemplo, <code>80</code>).</li>
+<li><code>--initial_capital</code>: Capital inicial para el backtest (por ejemplo, <code>5000</code>).</li>
+<li><code>--since</code>: Timestamp opcional para definir el inicio de los datos históricos (por ejemplo, <code>1609459200</code> para el 1 de enero de 2021).</li>
+</ul>
+<pre><code></code></pre>
+</li>
+</ul>
+<p>3 Ejecución de la Aplicación Streamlit</p>
+<p>Si deseas visualizar el análisis de manera interactiva, utiliza la aplicación Streamlit proporcionada.</p>
+<ol>
+<li><p>Asegúrate de que el archivo <code>run.sh</code> tenga permisos de ejecución:</p>
+<div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>run.sh
+</pre></div>
+</li>
+<li><p>Ejecuta el archivo <code>run.sh</code> para iniciar la aplicación:</p>
 <div class="highlight"><pre><span></span>./run.sh
 </pre></div>
+</li>
+<li><p>Abre el navegador y accede a la dirección que se muestra en la terminal (generalmente en <a href="http://localhost:8501">localhost</a>).</p>
 </li>
 </ol>
 </div>
@@ -8455,6 +8573,22 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="5.-Pantallazos-y-Resultados">5. Pantallazos y Resultados<a class="anchor-link" href="#5.-Pantallazos-y-Resultados">¶</a></h2><p>Incluye pantallazos de las gráficas generadas, las señales de compra y venta, y los resultados del backtest.</p>
+<h2 id="3.-Descripci%C3%B3n-de-los-M%C3%B3dulos">3. Descripción de los Módulos<a class="anchor-link" href="#3.-Descripci%C3%B3n-de-los-M%C3%B3dulos">¶</a></h2><p>A continuación, se presentan capturas y gráficos que ilustran las diferentes etapas y resultados del proyecto de análisis de criptomonedas:</p>
+<div style="text-align: center;">
+<img alt="Captura de los Selectores" src="/Users/manuel.infante/Library/CloudStorage/GoogleDrive-minfante.1@alumni.unav.es/My Drive/Repositorios/python-for-data-analysis/trading_simulator/docs/images/01. selectors-screenshot.png" style="width: 75%;"/>
+</div>
+<div style="text-align: center;">
+<img alt="Gráfico de Bandas de Bollinger" src="/Users/manuel.infante/Library/CloudStorage/GoogleDrive-minfante.1@alumni.unav.es/My Drive/Repositorios/python-for-data-analysis/trading_simulator/docs/images/02. bands-plot.png" style="width: 75%;"/>
+</div>
+<div style="text-align: center;">
+<img alt="Gráfico de Valor del Portafolio" src="/Users/manuel.infante/Library/CloudStorage/GoogleDrive-minfante.1@alumni.unav.es/My Drive/Repositorios/python-for-data-analysis/trading_simulator/docs/images/03. porfolio-value-plot.png" style="width: 75%;"/>
+</div>
+<div style="text-align: center;">
+<img alt="Resumen del Backtest" src="/Users/manuel.infante/Library/CloudStorage/GoogleDrive-minfante.1@alumni.unav.es/My Drive/Repositorios/python-for-data-analysis/trading_simulator/docs/images/04. backtest-summary.png" style="width: 75%;"/>
+</div>
+<div style="text-align: center;">
+<img alt="Señales de Trading" src="/Users/manuel.infante/Library/CloudStorage/GoogleDrive-minfante.1@alumni.unav.es/My Drive/Repositorios/python-for-data-analysis/trading_simulator/docs/images/05. trading-signals.png" style="width: 75%;"/>
+</div>
 </div>
 </div>
 </div>
@@ -8484,7 +8618,136 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="6.-Manejo-de-Errores-y-Excepciones">6. Manejo de Errores y Excepciones<a class="anchor-link" href="#6.-Manejo-de-Errores-y-Excepciones">¶</a></h1><p>El código incluye manejo de errores y excepciones para asegurar una ejecución robusta.</p>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+    body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+    }
+</style>
+<div id="5-pantallazos-y-resultados"></div>
+<h1 id="Manejo-de-Errores-en-el-Simulador-de-Trading">Manejo de Errores en el Simulador de Trading<a class="anchor-link" href="#Manejo-de-Errores-en-el-Simulador-de-Trading">¶</a></h1><h2 id="Descripci%C3%B3n-General">Descripción General<a class="anchor-link" href="#Descripci%C3%B3n-General">¶</a></h2><p>Este documento describe los mecanismos avanzados de manejo de errores implementados en el simulador de trading. Cada componente, como <code>TradingEngine</code>, <code>SignalGenerator</code>, <code>Backtester</code> y <code>CryptoDataProcessor</code>, incluye validaciones y gestión de excepciones para garantizar la resiliencia durante la ejecución.</p>
+<hr/>
+<h2 id="Ejemplos-de-Manejo-de-Errores-por-Componente">Ejemplos de Manejo de Errores por Componente<a class="anchor-link" href="#Ejemplos-de-Manejo-de-Errores-por-Componente">¶</a></h2><h3 id="1.-Clase-Config">1. <strong>Clase Config</strong><a class="anchor-link" href="#1.-Clase-Config">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>La clase <code>Config</code> valida los parámetros críticos de configuración, como el intervalo (<code>interval</code>), y lanza errores si los valores son inválidos.</p>
+<h4 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">¶</a></h4><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pair</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1440</span><span class="p">,</span> <span class="n">oversold</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">overbought</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">70</span><span class="p">):</span>
+        <span class="n">allowed_intervals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">1440</span><span class="p">,</span> <span class="mi">10080</span><span class="p">,</span> <span class="mi">21600</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">interval</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed_intervals</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Intervalo inválido: </span><span class="si">{</span><span class="n">interval</span><span class="si">}</span><span class="s2">. Valores permitidos: </span><span class="si">{</span><span class="n">allowed_intervals</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pair</span> <span class="o">=</span> <span class="n">pair</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interval</span> <span class="o">=</span> <span class="n">interval</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">oversold</span> <span class="o">=</span> <span class="n">oversold</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">overbought</span> <span class="o">=</span> <span class="n">overbought</span>
+</pre></div>
+<h4 id="Errores-Lanzados">Errores Lanzados<a class="anchor-link" href="#Errores-Lanzados">¶</a></h4><ul>
+<li><strong><code>ValueError</code></strong>: Si el intervalo no está en la lista de valores válidos.</li>
+</ul>
+<hr/>
+<h3 id="2.-CryptoDataProcessor">2. <strong>CryptoDataProcessor</strong><a class="anchor-link" href="#2.-CryptoDataProcessor">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>Este componente se conecta a la API de Kraken y procesa datos. Maneja errores relacionados con la conectividad, la validación de respuestas y la integridad de los datos.</p>
+<h4 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">¶</a></h4><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fetch_ohlc_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pair</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">interval</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">since</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">OHLC_URL</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">'pair'</span><span class="p">:</span> <span class="n">pair</span><span class="p">,</span> <span class="s1">'interval'</span><span class="p">:</span> <span class="n">interval</span><span class="p">,</span> <span class="s1">'since'</span><span class="p">:</span> <span class="n">since</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>  <span class="c1"># Lanza HTTPError si el código de estado es 4xx/5xx</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        
+        <span class="k">if</span> <span class="s1">'error'</span> <span class="ow">in</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">data</span><span class="p">[</span><span class="s1">'error'</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error de API: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">'error'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="s1">'result'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">data</span><span class="p">[</span><span class="s1">'result'</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Falta el campo 'result' en la respuesta de la API."</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_ohlc_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error en la conexión con la API: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error procesando los datos de la API: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<h4 id="Errores-Lanzados">Errores Lanzados<a class="anchor-link" href="#Errores-Lanzados">¶</a></h4><ul>
+<li><strong><code>ConnectionError</code></strong>: Problemas de red o API.</li>
+<li><strong><code>ValueError</code></strong>: Campos ausentes o inválidos en la respuesta.</li>
+</ul>
+<hr/>
+<h3 id="3.-SignalGenerator">3. <strong>SignalGenerator</strong><a class="anchor-link" href="#3.-SignalGenerator">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>Genera señales de trading utilizando indicadores técnicos como las Bandas de Bollinger y el RSI. Maneja datos faltantes o inválidos.</p>
+<h4 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">¶</a></h4><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_signals</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">'close'</span><span class="p">]):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Falta el precio de cierre en el índice </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="c1"># Lógica para generar señales...</span>
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error al generar señales: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<h4 id="Errores-Lanzados">Errores Lanzados<a class="anchor-link" href="#Errores-Lanzados">¶</a></h4><ul>
+<li><strong><code>ValueError</code></strong>: Si las columnas requeridas contienen datos faltantes.</li>
+<li><strong><code>RuntimeError</code></strong>: Encapsula errores menores para depuración.</li>
+</ul>
+<hr/>
+<h3 id="4.-Backtester">4. <strong>Backtester</strong><a class="anchor-link" href="#4.-Backtester">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>Ejecuta el backtesting para evaluar el rendimiento de las señales de trading. Valida entradas como señales y capital inicial.</p>
+<h4 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">¶</a></h4><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_backtest</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"No hay datos disponibles para el backtesting."</span><span class="p">)</span>
+        <span class="c1"># Lógica de backtesting...</span>
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error en el backtesting: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<h4 id="Errores-Lanzados">Errores Lanzados<a class="anchor-link" href="#Errores-Lanzados">¶</a></h4><ul>
+<li><strong><code>ValueError</code></strong>: Si los datos de entrada están vacíos o son inválidos.</li>
+<li><strong><code>RuntimeError</code></strong>: Maneja errores que interrumpen la ejecución.</li>
+</ul>
+<hr/>
+<h3 id="5.-TradingEngine">5. <strong>TradingEngine</strong><a class="anchor-link" href="#5.-TradingEngine">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>El <code>TradingEngine</code> coordina todos los componentes, asegurando que cada paso del proceso sea validado y esté libre de errores.</p>
+<h4 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">¶</a></h4><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">process_data</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">generate_signals</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">backtest</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error en la ejecución del TradingEngine: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<h4 id="Errores-Lanzados">Errores Lanzados<a class="anchor-link" href="#Errores-Lanzados">¶</a></h4><ul>
+<li><strong><code>RuntimeError</code></strong>: Captura errores de cualquier etapa del proceso (procesamiento de datos, generación de señales, backtesting).</li>
+</ul>
+<hr/>
+<h2 id="Resumen">Resumen<a class="anchor-link" href="#Resumen">¶</a></h2><table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Tipo de Error</th>
+<th>Condición del Error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Config</td>
+<td><code>ValueError</code></td>
+<td>Intervalo inválido</td>
+</tr>
+<tr>
+<td>CryptoDataProcessor</td>
+<td><code>ConnectionError</code></td>
+<td>Fallo en la conexión con la API</td>
+</tr>
+<tr>
+<td>SignalGenerator</td>
+<td><code>RuntimeError</code></td>
+<td>Falta de columnas requeridas</td>
+</tr>
+<tr>
+<td>Backtester</td>
+<td><code>ValueError</code></td>
+<td>Datos de entrada vacíos</td>
+</tr>
+<tr>
+<td>TradingEngine</td>
+<td><code>RuntimeError</code></td>
+<td>Error en cualquier etapa del proceso</td>
+</tr>
+</tbody>
+</table>
+<p>Implementar estas estrategias robustas de manejo de errores asegura una degradación controlada, una mayor capacidad de depuración y operaciones confiables.</p>
 </div>
 </div>
 </div>
@@ -8514,9 +8777,85 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7.-Testeo-y-Cobertura">7. Testeo y Cobertura<a class="anchor-link" href="#7.-Testeo-y-Cobertura">¶</a></h2><p>El proyecto incluye pruebas unitarias para los módulos principales. Las pruebas se pueden ejecutar con:</p>
-<div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>tests
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+    body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+    }
+</style>
+<div id="7-testeo-y-cobertura"></div>
+<h2 id="7.-Testeo-y-Cobertura">7. Testeo y Cobertura<a class="anchor-link" href="#7.-Testeo-y-Cobertura">¶</a></h2><h2 id="Descripci%C3%B3n-General">Descripción General<a class="anchor-link" href="#Descripci%C3%B3n-General">¶</a></h2><p>El proyecto incluye un conjunto de pruebas unitarias para validar el funcionamiento de los módulos principales, asegurando que las funcionalidades implementadas cumplan con los requisitos y sean resilientes a posibles errores.</p>
+<p>Las pruebas se implementan utilizando <code>pytest</code> y están diseñadas para cubrir:</p>
+<ul>
+<li>Configuración del motor de trading (<code>Config</code>).</li>
+<li>Procesamiento de datos (<code>CryptoDataProcessor</code>).</li>
+<li>Generación de señales (<code>SignalGenerator</code>).</li>
+<li>Ejecución de backtesting (<code>Backtester</code>).</li>
+<li>Visualización de datos y señales (<code>CryptoPlotter</code>).</li>
+<li>Integración completa con el motor de trading (<code>TradingEngine</code>).</li>
+</ul>
+<hr/>
+<h2 id="Ejecuci%C3%B3n-de-las-Pruebas">Ejecución de las Pruebas<a class="anchor-link" href="#Ejecuci%C3%B3n-de-las-Pruebas">¶</a></h2><h3 id="Comando-para-Ejecutar-las-Pruebas">Comando para Ejecutar las Pruebas<a class="anchor-link" href="#Comando-para-Ejecutar-las-Pruebas">¶</a></h3><p>Para ejecutar todas las pruebas unitarias, utiliza el siguiente comando en la raíz del proyecto:</p>
+<div class="highlight"><pre><span></span>pytest
 </pre></div>
+<hr/>
+<h2 id="Ejemplos-de-Casos-de-Prueba">Ejemplos de Casos de Prueba<a class="anchor-link" href="#Ejemplos-de-Casos-de-Prueba">¶</a></h2><h3 id="1.-Pruebas-para-Config">1. <strong>Pruebas para Config</strong><a class="anchor-link" href="#1.-Pruebas-para-Config">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>Valida que los parámetros de configuración se inicialicen correctamente y manejen errores de entrada.</p>
+<h4 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">¶</a></h4><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_config_initialization</span><span class="p">():</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span><span class="n">pair</span><span class="o">=</span><span class="s2">"ETHUSD"</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1440</span><span class="p">,</span> <span class="n">oversold</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">overbought</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">config</span><span class="o">.</span><span class="n">pair</span> <span class="o">==</span> <span class="s2">"ETHUSD"</span>
+    <span class="k">assert</span> <span class="n">config</span><span class="o">.</span><span class="n">interval</span> <span class="o">==</span> <span class="mi">1440</span>
+    <span class="k">assert</span> <span class="n">config</span><span class="o">.</span><span class="n">oversold</span> <span class="o">==</span> <span class="mi">30</span>
+    <span class="k">assert</span> <span class="n">config</span><span class="o">.</span><span class="n">overbought</span> <span class="o">==</span> <span class="mi">70</span>
+</pre></div>
+<hr/>
+<h3 id="2.-Pruebas-para-CryptoDataProcessor">2. <strong>Pruebas para CryptoDataProcessor</strong><a class="anchor-link" href="#2.-Pruebas-para-CryptoDataProcessor">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>Simula la respuesta de la API de Kraken para verificar el procesamiento y validación de datos.</p>
+<h4 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">¶</a></h4><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_crypto_data_processor</span><span class="p">(</span><span class="n">mocker</span><span class="p">,</span> <span class="n">sample_data</span><span class="p">):</span>
+    <span class="n">mocker</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">KrakenAPIHandler</span><span class="p">,</span> <span class="s2">"fetch_ohlc_data"</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="n">sample_data</span><span class="p">)</span>
+    <span class="n">processor</span> <span class="o">=</span> <span class="n">CryptoDataProcessor</span><span class="p">(</span><span class="n">pair</span><span class="o">=</span><span class="s2">"ETHUSD"</span><span class="p">)</span>
+    <span class="n">processed_data</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">get_processed_data</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">processed_data</span><span class="o">.</span><span class="n">empty</span>
+    <span class="k">assert</span> <span class="s2">"upper_band"</span> <span class="ow">in</span> <span class="n">processed_data</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+<hr/>
+<h3 id="3.-Pruebas-para-SignalGenerator">3. <strong>Pruebas para SignalGenerator</strong><a class="anchor-link" href="#3.-Pruebas-para-SignalGenerator">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>Verifica que las señales de compra y venta se generen correctamente según las condiciones predefinidas.</p>
+<h4 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">¶</a></h4><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_signal_generator</span><span class="p">(</span><span class="n">sample_data</span><span class="p">):</span>
+    <span class="n">generator</span> <span class="o">=</span> <span class="n">SignalGenerator</span><span class="p">(</span><span class="n">sample_data</span><span class="p">)</span>
+    <span class="n">signals</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">generate_signals</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="s2">"buy"</span> <span class="ow">in</span> <span class="n">signals</span><span class="o">.</span><span class="n">columns</span>
+    <span class="k">assert</span> <span class="s2">"sell"</span> <span class="ow">in</span> <span class="n">signals</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+<hr/>
+<h3 id="4.-Pruebas-para-Backtester">4. <strong>Pruebas para Backtester</strong><a class="anchor-link" href="#4.-Pruebas-para-Backtester">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>Evalúa la ejecución del backtesting, incluyendo cálculos de métricas y seguimiento de portafolio.</p>
+<h4 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">¶</a></h4><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_backtester</span><span class="p">(</span><span class="n">sample_data</span><span class="p">):</span>
+    <span class="n">sample_data</span><span class="p">[</span><span class="s2">"buy"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">sample_data</span><span class="p">[</span><span class="s2">"rsi"</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">,</span> <span class="n">sample_data</span><span class="p">[</span><span class="s2">"close"</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">sample_data</span><span class="p">[</span><span class="s2">"sell"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">sample_data</span><span class="p">[</span><span class="s2">"rsi"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="p">,</span> <span class="n">sample_data</span><span class="p">[</span><span class="s2">"close"</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">backtester</span> <span class="o">=</span> <span class="n">Backtester</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">sample_data</span><span class="p">,</span> <span class="n">initial_capital</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">backtester</span><span class="o">.</span><span class="n">run_backtest</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span>
+</pre></div>
+<hr/>
+<h3 id="5.-Pruebas-para-TradingEngine">5. <strong>Pruebas para TradingEngine</strong><a class="anchor-link" href="#5.-Pruebas-para-TradingEngine">¶</a></h3><h4 id="Descripci%C3%B3n">Descripción<a class="anchor-link" href="#Descripci%C3%B3n">¶</a></h4><p>Comprueba la integración de todos los módulos en el motor de trading, desde la obtención de datos hasta la ejecución de backtesting.</p>
+<h4 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">¶</a></h4><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_trading_engine</span><span class="p">(</span><span class="n">mocker</span><span class="p">,</span> <span class="n">sample_data</span><span class="p">):</span>
+    <span class="n">mocker</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">KrakenAPIHandler</span><span class="p">,</span> <span class="s2">"fetch_ohlc_data"</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="n">sample_data</span><span class="p">)</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span><span class="n">pair</span><span class="o">=</span><span class="s2">"ETHUSD"</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1440</span><span class="p">,</span> <span class="n">oversold</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">overbought</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+    <span class="n">engine</span> <span class="o">=</span> <span class="n">TradingEngine</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+    <span class="n">engine</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+    <span class="k">assert</span> <span class="n">engine</span><span class="o">.</span><span class="n">processed_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="k">assert</span> <span class="n">engine</span><span class="o">.</span><span class="n">signals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="k">assert</span> <span class="n">engine</span><span class="o">.</span><span class="n">backtest_results</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</pre></div>
+<hr/>
+<h2 id="Resumen-de-Cobertura">Resumen de Cobertura<a class="anchor-link" href="#Resumen-de-Cobertura">¶</a></h2><p>El conjunto de pruebas garantiza:</p>
+<ul>
+<li>Correcta inicialización de configuraciones.</li>
+<li>Integridad de los datos procesados.</li>
+<li>Generación precisa de señales de trading.</li>
+<li>Ejecución fiable de las pruebas de backtesting.</li>
+<li>Verificación de integración y resultados finales del motor de trading.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -8576,7 +8915,60 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="9.-Distribuci%C3%B3n-del-Proyecto">9. Distribución del Proyecto<a class="anchor-link" href="#9.-Distribuci%C3%B3n-del-Proyecto">¶</a></h2><p>El proyecto se puede distribuir utilizando <code>setup.py</code> y se puede subir a PyPi o una plataforma PaaS.</p>
+<h2 id="9.-Distribuci%C3%B3n-del-Proyecto">9. Distribución del Proyecto<a class="anchor-link" href="#9.-Distribuci%C3%B3n-del-Proyecto">¶</a></h2><h1 id="Distribuci%C3%B3n-del-Proyecto">Distribución del Proyecto<a class="anchor-link" href="#Distribuci%C3%B3n-del-Proyecto">¶</a></h1><h2 id="Descripci%C3%B3n-General">Descripción General<a class="anchor-link" href="#Descripci%C3%B3n-General">¶</a></h2><p>El proyecto está diseñado para ser distribuido y desplegado utilizando herramientas como <code>setup.sh</code> para configuración, <code>run.sh</code> para ejecución, y un archivo <code>Procfile</code> para soporte en plataformas PaaS como Heroku.</p>
+<p>Además, se proporciona una interfaz gráfica mediante Streamlit, lo que permite a los usuarios interactuar con el simulador de estrategia de trading directamente desde su navegador.</p>
+<hr/>
+<h2 id="Despliegue-en-PyPi-o-Heroku">Despliegue en PyPi o Heroku<a class="anchor-link" href="#Despliegue-en-PyPi-o-Heroku">¶</a></h2><h3 id="1.-Configuraci%C3%B3n-con-setup.sh">1. <strong>Configuración con <code>setup.sh</code></strong><a class="anchor-link" href="#1.-Configuraci%C3%B3n-con-setup.sh">¶</a></h3><p>Este script configura el entorno de Streamlit para habilitar un servidor sin interfaz gráfica (<code>headless</code>) y adaptarse dinámicamente al puerto especificado.</p>
+<h4 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">¶</a></h4><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.streamlit/
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"[server]\nheadless = true\nport = </span><span class="nv">$PORT</span><span class="s2">\nenableCORS = false\n\n"</span><span class="w"> </span>&gt;<span class="w"> </span>~/.streamlit/config.toml
+</pre></div>
+<hr/>
+<h3 id="2.-Ejecuci%C3%B3n-con-run.sh">2. <strong>Ejecución con <code>run.sh</code></strong><a class="anchor-link" href="#2.-Ejecuci%C3%B3n-con-run.sh">¶</a></h3><p>El script <code>run.sh</code> asegura que el entorno de ejecución incluye el directorio actual en el <code>PYTHONPATH</code> y luego ejecuta la aplicación de Streamlit.</p>
+<h4 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">¶</a></h4><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
+streamlit<span class="w"> </span>run<span class="w"> </span>streamlit_app/app.py
+</pre></div>
+<hr/>
+<h3 id="3.-Integraci%C3%B3n-con-Heroku">3. <strong>Integración con Heroku</strong><a class="anchor-link" href="#3.-Integraci%C3%B3n-con-Heroku">¶</a></h3><p>El archivo <code>Procfile</code> define el comando de ejecución para desplegar el simulador en Heroku:</p>
+<h4 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">¶</a></h4><pre><code class="language-plaintext">plaintext
+web: bash run.sh
+</code></pre>
+<p>Esto asegura que Heroku ejecute el script <code>run.sh</code> al iniciar la aplicación.</p>
+<hr/>
+<h2 id="Interfaz-Gr%C3%A1fica">Interfaz Gráfica<a class="anchor-link" href="#Interfaz-Gr%C3%A1fica">¶</a></h2><p>El simulador incluye una interfaz gráfica desarrollada con Streamlit, ubicada en <code>app.py</code>. La aplicación permite configurar y ejecutar simulaciones de estrategias de trading, ofreciendo opciones como:</p>
+<ul>
+<li>Selección de pares de criptomonedas.</li>
+<li>Capital inicial.</li>
+<li>Configuración de intervalos y niveles de sobrecompra/sobreventa para RSI.</li>
+</ul>
+<h4 id="Ejemplo-de-C%C3%B3digo">Ejemplo de Código<a class="anchor-link" href="#Ejemplo-de-C%C3%B3digo">¶</a></h4><div class="highlight"><pre><span></span><span class="n">pair</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+    <span class="s2">"Select the cryptocurrency pair"</span><span class="p">,</span> 
+    <span class="n">options</span><span class="o">=</span><span class="n">available_pairs</span><span class="p">,</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s2">"ETHUSD"</span>
+<span class="p">)</span>
+
+<span class="n">initial_capital</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">number_input</span><span class="p">(</span>
+    <span class="s2">"Initial Capital"</span><span class="p">,</span> 
+    <span class="n">min_value</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> 
+    <span class="n">value</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s2">"</span><span class="si">%d</span><span class="s2">"</span>
+<span class="p">)</span>
+
+<span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s2">"Run Simulation"</span><span class="p">):</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span>
+        <span class="n">pair</span><span class="o">=</span><span class="n">pair</span><span class="p">,</span>
+        <span class="n">initial_capital</span><span class="o">=</span><span class="n">initial_capital</span><span class="p">,</span>
+        <span class="n">interval</span><span class="o">=</span><span class="n">INTERVAL_MAP</span><span class="p">[</span><span class="n">interval</span><span class="p">],</span>
+        <span class="n">oversold</span><span class="o">=</span><span class="n">oversold</span><span class="p">,</span>
+        <span class="n">overbought</span><span class="o">=</span><span class="n">overbought</span>
+    <span class="p">)</span>
+    <span class="n">engine</span> <span class="o">=</span> <span class="n">TradingEngine</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+    <span class="n">engine</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">engine</span><span class="o">.</span><span class="n">get_data_plot</span><span class="p">())</span>
+</pre></div>
+<hr/>
+<h2 id="URL-del-Proyecto-en-Heroku">URL del Proyecto en Heroku<a class="anchor-link" href="#URL-del-Proyecto-en-Heroku">¶</a></h2><p>El simulador está disponible en la siguiente URL:
+<a href="https://crypto-trading-simulator-2137aa365359.herokuapp.com/">Crypto Trading Simulator</a></p>
 </div>
 </div>
 </div>
@@ -8607,6 +8999,131 @@ body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="10.-Conclusi%C3%B3n">10. Conclusión<a class="anchor-link" href="#10.-Conclusi%C3%B3n">¶</a></h2><p>Describe cómo se ha afrontado el proyecto y las decisiones tomadas durante el desarrollo.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=70b43dfa">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+    body, div, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+    }
+</style>
+<div id="11-glosario"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9af2b548">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="11.-Glosario">11. Glosario<a class="anchor-link" href="#11.-Glosario">¶</a></h2><h3 id="Explicaci%C3%B3n-de-los-Resultados-del-Backtest">Explicación de los Resultados del Backtest<a class="anchor-link" href="#Explicaci%C3%B3n-de-los-Resultados-del-Backtest">¶</a></h3><p>El análisis del rendimiento del backtest se realiza mediante un conjunto de métricas clave, cada una de las cuales ayuda a evaluar la efectividad y el riesgo de la estrategia de trading. A continuación se detallan las métricas calculadas:</p>
+<h4 id="1.-'Initial-Capital'">1. <strong>'Initial Capital'</strong><a class="anchor-link" href="#1.-'Initial-Capital'">¶</a></h4><ul>
+<li><strong>Descripción:</strong> Capital inicial con el que se comienza el backtest.</li>
+<li><strong>Cálculo:</strong> Es el valor definido al iniciar el backtest, sin cambios durante la ejecución.</li>
+</ul>
+<h4 id="2.-'Final-Capital'">2. <strong>'Final Capital'</strong><a class="anchor-link" href="#2.-'Final-Capital'">¶</a></h4><ul>
+<li><strong>Descripción:</strong> Capital final tras ejecutar todas las operaciones de compra y venta.</li>
+<li><strong>Cálculo:</strong><br/>
+$$ \text{Capital Final} = \text{Capital Inicial} + \text{Ganancias/Pérdidas Totales} $$</li>
+</ul>
+<h4 id="3.-'Total-Trades'">3. <strong>'Total Trades'</strong><a class="anchor-link" href="#3.-'Total-Trades'">¶</a></h4><ul>
+<li><strong>Descripción:</strong> Número total de operaciones realizadas durante el backtest.</li>
+<li><strong>Cálculo:</strong> Es simplemente el número de elementos en la lista <code>self.trades</code>, que contiene todas las operaciones de compra y venta.</li>
+</ul>
+<h4 id="4.-'Winning-Trades'">4. <strong>'Winning Trades'</strong><a class="anchor-link" href="#4.-'Winning-Trades'">¶</a></h4><ul>
+<li><strong>Descripción:</strong> Número de operaciones que resultaron en ganancias.</li>
+<li><strong>Cálculo:</strong><br/>
+$$ \text{Operaciones Ganadoras} = \text{Número de operaciones donde} \, \text{Profit} &gt; 0 $$</li>
+</ul>
+<h4 id="5.-'Losing-Trades'">5. <strong>'Losing Trades'</strong><a class="anchor-link" href="#5.-'Losing-Trades'">¶</a></h4><ul>
+<li><strong>Descripción:</strong> Número de operaciones que resultaron en pérdidas.</li>
+<li><strong>Cálculo:</strong><br/>
+$$ \text{Operaciones Perdedoras} = \text{Número de operaciones donde} \, \text{Profit} &lt; 0 $$</li>
+</ul>
+<h4 id="6.-'Total-Profit'">6. <strong>'Total Profit'</strong><a class="anchor-link" href="#6.-'Total-Profit'">¶</a></h4><ul>
+<li><strong>Descripción:</strong> Beneficio total obtenido o pérdida total durante el backtest.</li>
+<li><strong>Cálculo:</strong><br/>
+$$ \text{Beneficio Total} = \text{Capital Final} - \text{Capital Inicial} $$</li>
+</ul>
+<h4 id="7.-'Sharpe-Ratio'">7. <strong>'Sharpe Ratio'</strong><a class="anchor-link" href="#7.-'Sharpe-Ratio'">¶</a></h4><ul>
+<li><p><strong>Descripción:</strong> El Sharpe Ratio mide el rendimiento ajustado por riesgo. Un ratio mayor indica una mejor relación entre retorno y volatilidad.</p>
+</li>
+<li><p><strong>Fórmula:</strong>
+$$ \text{Sharpe Ratio} = \frac{\text{Media de los retornos}}{\text{Desviación estándar de los retornos}} \times \sqrt{252} $$</p>
+<p>El Sharpe Ratio ajusta el retorno para tener en cuenta la volatilidad del portafolio, utilizando una base anual de 252 días de negociación. Un Sharpe Ratio más alto indica una estrategia con mejores rendimientos ajustados por riesgo.</p>
+</li>
+<li><p><strong>Referencia:</strong> <a href="https://en.wikipedia.org/wiki/Sharpe_ratio">Sharpe Ratio - Wikipedia</a></p>
+</li>
+</ul>
+<h4 id="8.-'Annual-Return-(%25)'">8. <strong>'Annual Return (%)'</strong><a class="anchor-link" href="#8.-'Annual-Return-(%25)'">¶</a></h4><ul>
+<li><p><strong>Descripción:</strong> El Retorno Anual refleja la rentabilidad anualizada del portafolio como porcentaje.</p>
+</li>
+<li><p><strong>Fórmula:</strong>
+$$ \text{Retorno Anual} = \left( \frac{\text{Capital Final}}{\text{Capital Inicial}} - 1 \right) \times 100 $$</p>
+<p>Este valor se calcula tomando el valor final del portafolio y comparándolo con el capital inicial.</p>
+</li>
+<li><p><strong>Referencia:</strong> <a href="https://en.wikipedia.org/wiki/Annualized_return">Annualized Return - Wikipedia</a></p>
+</li>
+</ul>
+<h4 id="9.-'Max-Drawdown-(%25)'">9. <strong>'Max Drawdown (%)'</strong><a class="anchor-link" href="#9.-'Max-Drawdown-(%25)'">¶</a></h4><ul>
+<li><p><strong>Descripción:</strong> El Máximo Drawdown muestra la mayor pérdida desde el pico más alto hasta el punto más bajo del portafolio durante el período del backtest.</p>
+</li>
+<li><p><strong>Fórmula:</strong>
+$$ \text{Max Drawdown} = \frac{\text{Valor Máximo} - \text{Valor Mínimo Posterior}}{\text{Valor Máximo}} \times 100 $$</p>
+<p>El Máximo Drawdown es una métrica crucial para evaluar el riesgo, ya que muestra la mayor caída desde el valor más alto alcanzado hasta el valor más bajo posterior.</p>
+</li>
+<li><p><strong>Referencia:</strong> <a href="https://en.wikipedia.org/wiki/Maximum_drawdown">Maximum Drawdown - Wikipedia</a></p>
+</li>
+</ul>
+<hr/>
+<h3 id="Bandas-de-Bollinger">Bandas de Bollinger<a class="anchor-link" href="#Bandas-de-Bollinger">¶</a></h3><p>Las Bandas de Bollinger son un indicador técnico que mide la volatilidad del precio y establece un rango en torno a una media móvil. Se componen de tres líneas:</p>
+<ol>
+<li><p><strong>Línea Superior (Upper Band):</strong><br/>
+$$ \text{Upper Band} = \text{Media Móvil} + (K \times \text{Desviación Estándar}) $$</p>
+</li>
+<li><p><strong>Línea Inferior (Lower Band):</strong><br/>
+$$ \text{Lower Band} = \text{Media Móvil} - (K \times \text{Desviación Estándar}) $$</p>
+</li>
+<li><p><strong>Media Móvil (Middle Band):</strong><br/>
+$$ \text{Middle Band} = \text{Media Móvil Simple de X Períodos} $$</p>
+</li>
+</ol>
+<p><strong>Interpretación:</strong></p>
+<ul>
+<li>Cuando el precio se acerca a la <strong>Upper Band</strong>, el activo puede estar sobrecomprado, lo que sugiere una posible venta.</li>
+<li>Cuando el precio se acerca a la <strong>Lower Band</strong>, el activo puede estar sobrevendido, lo que sugiere una posible compra.</li>
+</ul>
+<p>El valor de ( K ) es un parámetro que generalmente se establece en 2 para calcular las bandas a dos desviaciones estándar del precio.</p>
+<ul>
+<li><strong>Referencia:</strong> <a href="https://en.wikipedia.org/wiki/Bollinger_Bands">Bollinger Bands - Wikipedia</a></li>
+</ul>
+<hr/>
+<h3 id="RSI-(%C3%8Dndice-de-Fuerza-Relativa)">RSI (Índice de Fuerza Relativa)<a class="anchor-link" href="#RSI-(%C3%8Dndice-de-Fuerza-Relativa)">¶</a></h3><p>El RSI es un indicador de momentum que mide la velocidad y el cambio de los movimientos de precio. Su valor varía entre 0 y 100, y ayuda a identificar condiciones de sobrecompra o sobreventa.</p>
+<p><strong>Fórmula:</strong>
+$$ RSI = 100 - \frac{100}{1 + RS} $$</p>
+<p>donde:
+$$ RS = \frac{\text{Promedio de los cierres alcistas}}{\text{Promedio de los cierres bajistas}} $$</p>
+<p><strong>Interpretación:</strong></p>
+<ul>
+<li>Un RSI superior a 70 indica que el activo está <strong>sobrecomprado</strong>, lo que podría sugerir una venta.</li>
+<li>Un RSI inferior a 30 indica que el activo está <strong>sobrevendido</strong>, lo que podría sugerir una compra.</li>
+</ul>
+<p>Este indicador es útil para identificar puntos potenciales de reversión de tendencia.</p>
+<ul>
+<li><strong>Referencia:</strong> <a href="https://en.wikipedia.org/wiki/Relative_strength_index">Relative Strength Index (RSI) - Wikipedia</a></li>
+</ul>
 </div>
 </div>
 </div>
