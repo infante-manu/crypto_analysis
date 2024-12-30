@@ -1,9 +1,7 @@
-from dotenv import load_dotenv
 import sys
 import os
-load_dotenv()
-ROOTPATH = os.getenv("ROOTPATH")
-sys.path.insert(0, ROOTPATH)  # Insert at the beginning of the list
+ROOT_PATH = os.path.split(os.path.dirname(__file__))[:-1][0]
+sys.path.insert(0, ROOT_PATH)  # Insert one level below the file
 import pytest
 import pandas as pd
 import numpy as np
